@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SectionSkill from "./components/SectionSkill";
 import SectionIntro from "./components/SectionIntro";
+import SectionSkillAnimation from "./components/SectionSkillAnimation";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       ></Box>
       <SectionIntro />
       <SectionSkill />
+      <SectionSkillAnimation />
       <Footer />
     </div>
   );
