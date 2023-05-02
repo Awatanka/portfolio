@@ -2,8 +2,8 @@ import React from "react";
 import { Box, CssBaseline } from "@mui/material";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import SectionSkills from "./components/SectionSkill";
-// import { createTheme, ThemeProvider } from "@mui/material/styles";
+import SectionSkill from "./components/SectionSkill";
+import SectionIntro from "./components/SectionIntro";
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
         alignItems="center"
         flexDirection="column"
       ></Box>
-      <SectionSkills />
+      <SectionIntro />
+      <SectionSkill />
       <Footer />
     </div>
   );
