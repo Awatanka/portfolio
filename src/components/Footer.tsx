@@ -10,9 +10,10 @@ export const Footer: FC = (): ReactElement => {
     <Box
       sx={{
         height: "auto",
-        backgroundColor: "#CEC4CE",
+        backgroundColor: "#2F4F4F",
         paddingTop: "1rem",
         paddingBottom: "1rem",
+        color: "white",
       }}
     >
       <Container maxWidth="lg">
@@ -27,7 +28,7 @@ export const Footer: FC = (): ReactElement => {
             }}
           >
             <CopyrightIcon style={{ fontWeight: "300px" }} />
-            <Typography color="black" variant="h6">
+            <Typography color="white" variant="h6">
               {`Nataliia Sokolova ${new Date().getFullYear()}`}
             </Typography>
           </Grid>
@@ -36,7 +37,7 @@ export const Footer: FC = (): ReactElement => {
             <a href="mailto:natalia.sokolova.ca@gmail.com">
               <EmailIcon
                 component={EmailIcon}
-                style={{ color: "#2A3439", margin: "10px", fontSize: 40 }}
+                style={{ color: "white", margin: "10px", fontSize: 40 }}
               />
             </a>
             <a
@@ -46,7 +47,7 @@ export const Footer: FC = (): ReactElement => {
             >
               <LinkedInIcon
                 component={LinkedInIcon}
-                style={{ color: "#2A3439", margin: "10px", fontSize: 40 }}
+                style={{ color: "white", margin: "10px", fontSize: 40 }}
               />
             </a>
             <a
@@ -56,7 +57,7 @@ export const Footer: FC = (): ReactElement => {
             >
               <GitHubIcon
                 component={GitHubIcon}
-                style={{ color: "#2A3439", margin: "10px", fontSize: 40 }}
+                style={{ color: "white", margin: "10px", fontSize: 40 }}
               />
             </a>
           </Grid>

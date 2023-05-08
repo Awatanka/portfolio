@@ -1,28 +1,22 @@
 import React from "react";
-import { Box, CssBaseline } from "@mui/material";
+import { Container } from "@mui/material";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SectionSkill from "./components/SectionSkill";
-import SectionIntro from "./components/SectionIntro";
-import SectionSkillAnimation from "./components/SectionSkillAnimation";
+import Hero from "./components/Hero";
+import ProjectSection from "./components/ProjectSection";
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
-      <CssBaseline />
-      <Box
-        height="100vh"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-      ></Box>
-      <SectionIntro />
-      <SectionSkill />
-      <SectionSkillAnimation />
+      <Hero />
+      <Container maxWidth="lg">
+        <ProjectSection />
+        <SectionSkill />
+      </Container>
       <Footer />
-    </div>
+    </>
   );
 }
 

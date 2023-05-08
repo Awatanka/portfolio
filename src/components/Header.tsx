@@ -13,8 +13,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import ThemeProvider from "@mui/material/styles/ThemeProvider";
-import { createTheme } from "@mui/system";
 
 interface Props {
   window?: () => Window;
@@ -31,19 +29,10 @@ export default function DrawerAppBar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const customTheme = createTheme({
-    palette: {
-      primary: {
-        main: "#1976d2",
-        contrastText: "white",
-      },
-    },
-  });
-
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        SOKOLOVA
+        Menu
       </Typography>
       <Divider />
       <List>
@@ -62,10 +51,9 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", background: "#8C92AC" }}>
+    <Box sx={{ display: "flex", background: "#2F4F4F" }}>
       <CssBaseline />
-      {/* <ThemeProvider theme={customTheme}> */}
-      <AppBar component="nav" style={{ background: "#AA98A9", height: "80px" }}>
+      <AppBar component="nav" style={{ background: "#2F4F4F", height: "80px" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -84,7 +72,7 @@ export default function DrawerAppBar(props: Props) {
               display: { xs: "none", sm: "block" },
             }}
           >
-            SOKOLOVA
+            Menu
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -115,7 +103,6 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </Box>
-      {/* </ThemeProvider> */}
     </Box>
   );
 }
