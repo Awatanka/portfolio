@@ -32,7 +32,7 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Menu
+        Nataliia Sokolova
       </Typography>
       <Divider />
       <List>
@@ -70,9 +70,13 @@ export default function DrawerAppBar(props: Props) {
             sx={{
               flexGrow: 1,
               display: { xs: "none", sm: "block" },
+              fontFamily: "fantasy",
+              fontSize: 30,
+              alignItems: "center",
+              marginTop: "10px",
             }}
           >
-            Menu
+            Nataliia Sokolova
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (

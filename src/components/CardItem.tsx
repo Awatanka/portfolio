@@ -2,26 +2,17 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import { Typography } from "@mui/material";
 
-const GlobalStyle = styled(Box)({
-  "*": {
-    margin: 0,
-    padding: 0,
-    boxSizing: "border-box",
-    fontFamily: "'Poppins', sans-serif",
-  },
-  body: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#43345d",
-    minHeight: "800px",
-  },
-});
+interface CardItemProps {
+  imageSrc: string;
+  altText: string;
+  title: string;
+  description: string;
+}
 
-const Container = styled(Box)({
+const ContainerFirst = styled("div")({
   position: "relative",
-  width: "1100px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -29,29 +20,30 @@ const Container = styled(Box)({
   padding: "30px",
 });
 
-const Card = styled(Paper)({
+const CardBody = styled("div")({
   position: "relative",
-  maxWidth: "300px",
-  height: "215px",
+  maxWidth: "500px",
+  height: "260px",
   backgroundColor: "#fff",
-  margin: "30px 10px",
-  padding: "20px 15px",
+  margin: "20px 10px",
+  padding: "30px 20px",
   display: "flex",
   flexDirection: "column",
   boxShadow: "0 5px 20px rgba(0,0,0,0.5)",
   transition: "0.3s ease-in-out",
-  borderRadius: "15px",
+  borderRadius: "10px",
   "&:hover": {
-    height: "320px",
+    height: "360px",
   },
 });
 
-const Image = styled(Box)({
+const Image = styled("div")({
   position: "relative",
+  borderRadius: "5px",
   width: "260px",
   height: "260px",
-  top: "-40%",
-  left: "8px",
+  top: "-50%",
+  left: "2px",
   boxShadow: "0 5px 20px rgba(0,0,0,0.2)",
   zIndex: 1,
 });
@@ -61,20 +53,28 @@ const ImageWrapper = styled("img")({
   borderRadius: "15px",
 });
 
-const Content = styled(Box)({
+const Content = styled("div")({
   position: "relative",
-  top: "-140px",
+  top: "-100px",
   padding: "10px 15px",
-  color: "#111",
+  color: "black",
   textAlign: "center",
   visibility: "hidden",
   opacity: 0,
   transition: "0.3s ease-in-out",
+  marginTop: "0px",
+  "&:hover": {
+    marginTop: "30px",
+    visibility: "visible",
+    opacity: 1,
+    transitionDelay: "0.2s",
+    color: "black",
+  },
 });
 
-const CardWrapper = styled(Box)({
+const CardWrapper = styled("div")({
   "&:hover": {
-    [`${Content}`]: {
+    [`& ${Content}`]: {
       marginTop: "30px",
       visibility: "visible",
       opacity: 1,
@@ -83,27 +83,26 @@ const CardWrapper = styled(Box)({
   },
 });
 
-const CardItem = () => {
+const CardItem: React.FC<CardItemProps> = ({
+  imageSrc,
+  altText,
+  title,
+  description,
+}) => {
   return (
-    <GlobalStyle>
-      <Container>
-        <CardWrapper>
-          <Card>
-            <Image>
-              <ImageWrapper src="" alt="" />
-            </Image>
-            <Content>
-              <h3>This is content</h3>
-              <p>
-                In publishing and graphic design, Lorem ipsum is a placeholder
-                text commonly used to demonstrate the visual form of a document
-                or a typeface without relying on meaningful content.
-              </p>
-            </Content>
-          </Card>
-        </CardWrapper>
-      </Container>
-    </GlobalStyle>
+    <ContainerFirst>
+      <CardWrapper>
+        <CardBody>
+          <Image>
+            <ImageWrapper src={imageSrc} alt={altText} />
+          </Image>
+          <Content>
+            <Typography>{title}</Typography>
+            <p>{description}</p>
+          </Content>
+        </CardBody>
+      </CardWrapper>
+    </ContainerFirst>
   );
 };
 

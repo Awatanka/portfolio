@@ -5,16 +5,16 @@ import { Box, Typography } from "@mui/material";
 const Hero: React.FC = () => {
   const wavesAnimation = keyframes`
     0% {
-      transform: translate(-50%, -75%) rotate(0deg);
+      transform: translate(-50%, -25%) rotate(0deg);
     }
     100% {
-      transform: translate(-50%, -75%) rotate(360deg);
+      transform: translate(-50%, -25%) rotate(360deg);
     }
   `;
 
   const Waves = styled("div")(({ theme }) => ({
     position: "absolute",
-    bottom: 0,
+    top: "calc(100% - 200px)",
     left: 0,
     right: 0,
     height: 200,
@@ -26,9 +26,9 @@ const Hero: React.FC = () => {
       position: "absolute",
       width: "300vw",
       height: "300vw",
-      top: "-65vw",
+      bottom: "-65vw",
       left: "50%",
-      transform: "translate(-50%, -75%)",
+      transform: "translate(-50%, -25%)",
       borderRadius: "44%",
       animation: `${wavesAnimation} 15s linear infinite`,
     },
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        minHeight: "100vh",
         backgroundColor: "#333333",
       }}
     >
