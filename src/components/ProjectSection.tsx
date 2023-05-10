@@ -8,24 +8,43 @@ import vanCity from "../assets/vancity.png";
 import rentsy from "../assets/rentsy.png";
 import inStock from "../assets/inStock.png";
 import CardProject from "./CardProject";
+import { motion } from "framer-motion";
 
 // import CardItem from "./CardItem";
 
 const ProjectSection = () => {
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <>
+      <Typography variant="h4" style={{ padding: "10px 0" }}>
+        Projects
+      </Typography>
       <Box sx={{ margin: "50px", display: "flex", flexDirection: "column" }}>
-        <Typography>
-          This project was devided into the 3 sprints. Overall, finished project
-          represent website that: retrieve comment data from the provided API
-          and display it on the page; user able to add new comments that are
-          stored on the back-end using the API; new comments that are added
-          display with the existing comments, the newest comments are at the
-          top; pages display the shows data retrieved from the API; site
-          responsive and closely resemble the provided mockups;
-        </Typography>
+        <motion.div variants={textVariants} initial="hidden" animate="visible">
+          <Typography>
+            This project was devided into the 3 sprints. Overall, finished
+            project represent website that: retrieve comment data from the
+            provided API and display it on the page; user able to add new
+            comments that are stored on the back-end using the API; new comments
+            that are added display with the existing comments, the newest
+            comments are at the top; pages display the shows data retrieved from
+            the API; site responsive and closely resemble the provided mockups;
+          </Typography>
+        </motion.div>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           margin: "30px",
           display: "grid",
@@ -46,7 +65,7 @@ const ProjectSection = () => {
           title="This is content"
           description="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."
         />
-      </Box>
+      </Box> */}
       <Box
         sx={{
           display: "grid",

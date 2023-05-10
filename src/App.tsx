@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import ProjectSection from "./components/ProjectSection";
 import NewHero from "./components/NewHero";
 import Hero3 from "./components/Hero3";
+import AboutMe from "./components/AboutMe";
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
       <NewHero /> */}
       <Hero3
         title={"Nataliia Sokolova"}
-        subtitle={"Web developer, that you are looking for..."}
+        subtitle={"<web developer/>, that you are looking for..."}
       />
       <Container maxWidth="lg">
+        <AboutMe />
         <ProjectSection />
         <SectionSkill />
       </Container>

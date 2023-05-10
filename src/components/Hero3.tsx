@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 2 }}
       >
         <HeroContent>
           <motion.div
@@ -52,7 +52,12 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <HeroTitle variant="h1">{title}</HeroTitle>
+            <HeroTitle
+              variant="h1"
+              style={{ fontFamily: "fantasy", letterSpacing: "5px" }}
+            >
+              {title}
+            </HeroTitle>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
