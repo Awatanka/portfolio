@@ -1,12 +1,5 @@
-import {
-  ArrowForward,
-  GitHub,
-  LinkedIn,
-  OndemandVideo,
-  WebAsset,
-} from "@mui/icons-material";
+import { ArrowForward, GitHub, OndemandVideo } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
-import imgUrl from "../assets/gym-photo2.png";
 import { useState } from "react";
 
 const bgColor = "#E6E5E1";
@@ -41,7 +34,6 @@ const Container = styled("div")({
     fontSize: "14px",
     letterSpacing: "1px",
     margin: "5px 25px",
-    // writingMode: "vertical-lr",
     transition: "all 0.2s ease",
   },
   "& .icon-image": {
@@ -159,7 +151,6 @@ const CardProject: React.FC<CardProjectProps> = ({
   title,
   description,
   gitHubRef,
-  linkedInRef,
   webRef,
   picBg,
 }) => {
@@ -202,7 +193,6 @@ const CardProject: React.FC<CardProjectProps> = ({
               alignItems: "center",
             }}
           >
-            {/* <div className="social"> */}
             <i className="icon" ref={gitHubRef} style={{ margin: "20px" }}>
               <GitHub
                 style={{ fill: "#2F4F4F" }}
@@ -210,13 +200,6 @@ const CardProject: React.FC<CardProjectProps> = ({
                 fontSize="large"
               />
             </i>
-            {/* <i className="icon" ref={linkedInRef} style={{ margin: "20px" }}>
-              <LinkedIn
-                style={{ fill: "#76ADAD" }}
-                className="icon-image"
-                fontSize="large"
-              />
-            </i> */}
             <i className="icon" ref={webRef} style={{ margin: "20px" }}>
               <OndemandVideo
                 style={{ fill: "#76ADAD" }}

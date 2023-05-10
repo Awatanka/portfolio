@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import CardSection from "./CardSection";
 import { Box, Typography } from "@mui/material";
-import CardItem from "./CardItem";
 import gymImage from "../assets/gym-photo2.png";
 import eaSportImage from "../assets/ea-sport.png";
 import vanCity from "../assets/vancity.png";
 import rentsy from "../assets/rentsy.png";
 import inStock from "../assets/inStock.png";
+import portfolio from "../assets/portfolio.png";
 import CardProject from "./CardProject";
 import { motion } from "framer-motion";
-
-// import CardItem from "./CardItem";
+import ReactCardFlip from "react-card-flip";
 
 const ProjectSection = () => {
   const textVariants = {
@@ -26,46 +25,39 @@ const ProjectSection = () => {
       },
     },
   };
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
   return (
     <>
-      <Typography variant="h4" style={{ padding: "10px 0" }}>
+      {/* <Typography variant="h4" style={{ padding: "10px 0" }}>
         Projects
-      </Typography>
+      </Typography> */}
       <Box sx={{ margin: "50px", display: "flex", flexDirection: "column" }}>
         <motion.div variants={textVariants} initial="hidden" animate="visible">
           <Typography>
-            This project was devided into the 3 sprints. Overall, finished
-            project represent website that: retrieve comment data from the
-            provided API and display it on the page; user able to add new
-            comments that are stored on the back-end using the API; new comments
-            that are added display with the existing comments, the newest
-            comments are at the top; pages display the shows data retrieved from
-            the API; site responsive and closely resemble the provided mockups;
+            <Typography variant="h4" style={{ padding: "10px 0" }}>
+              Welcome to my projects section!{" "}
+            </Typography>
+            Here, you can explore some of my latest web development projects
+            that showcase my skills and passion for creating engaging and
+            user-friendly websites. From responsive designs to intuitive user
+            interfaces, each project is a reflection of my dedication to
+            delivering high-quality solutions that meet the needs of my clients
+            and their users. So, take a look around and get inspired by the
+            possibilities of what we can create together.
           </Typography>
         </motion.div>
+        <motion.div
+          animate={{
+            x: ["100px", "0px", "100px"],
+          }}
+        >
+          Weeee I'm animated
+        </motion.div>
       </Box>
-      {/* <Box
-        sx={{
-          margin: "30px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
-          gridAutoFlow: "row",
-          gap: "25px",
-        }}
-      >
-        <CardItem
-          imageSrc={gymImage}
-          altText="Alternative text for the image"
-          title="This is content"
-          description="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."
-        />
-        <CardItem
-          imageSrc={gymImage}
-          altText="Alternative text for the image"
-          title="This is content"
-          description="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."
-        />
-      </Box> */}
       <Box
         sx={{
           display: "grid",
@@ -75,6 +67,7 @@ const ProjectSection = () => {
           margin: "auto 0",
         }}
       >
+        {" "}
         <CardProject
           title={"The Gym"}
           description={"Tech Stack: HTML, Sass, JavaScript, API"}
@@ -107,12 +100,42 @@ const ProjectSection = () => {
         <CardProject
           title={"Portfolio"}
           description={
-            "Tech Stack: React, Sass, TypeScript, Node.js, Express.js, Knex.js, API"
+            "Tech Stack: React, Sass, TypeScript, MUI, Framer Motion"
           }
-          picBg={inStock}
+          picBg={portfolio}
         ></CardProject>
       </Box>
+
       <CardSection title={"Projects"} image={""}></CardSection>
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+        <div
+          style={{
+            backgroundColor: "green",
+            height: 100,
+            color: "#fff",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          How do you define the meaning of success?
+          <button onClick={handleClick}>Click to flip</button>
+        </div>
+
+        <div
+          style={{
+            backgroundColor: "red",
+            height: 100,
+            color: "#fff",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          Create video tutorials on YouTube
+          <button onClick={handleClick}>Click to flip</button>
+        </div>
+      </ReactCardFlip>
     </>
   );
 };

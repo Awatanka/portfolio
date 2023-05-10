@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const ContainerHolder = styled("div")({
   width: "50vw",
