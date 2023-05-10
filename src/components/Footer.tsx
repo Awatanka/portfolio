@@ -4,13 +4,16 @@ import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CopyrightIcon from "@mui/icons-material/Copyright";
+import wave from "../assets/wave.png";
 
 export const Footer: FC = (): ReactElement => {
   return (
     <Box
       sx={{
         height: "auto",
-        backgroundColor: "#2F4F4F",
+        // backgroundColor: "#248282",
+        backgroundImage: `url(${wave})`,
+        backgroundSize: "105% 100%",
         paddingTop: "1rem",
         paddingBottom: "1rem",
         color: "white",
@@ -37,7 +40,7 @@ export const Footer: FC = (): ReactElement => {
             <a href="mailto:natalia.sokolova.ca@gmail.com">
               <EmailIcon
                 component={EmailIcon}
-                style={{ color: "white", margin: "10px", fontSize: 40 }}
+                style={{ color: "#2F4F4F", margin: "10px", fontSize: 40 }}
               />
             </a>
             <a
@@ -47,7 +50,7 @@ export const Footer: FC = (): ReactElement => {
             >
               <LinkedInIcon
                 component={LinkedInIcon}
-                style={{ color: "white", margin: "10px", fontSize: 40 }}
+                style={{ color: "#2F4F4F", margin: "10px", fontSize: 40 }}
               />
             </a>
             <a
@@ -57,7 +60,7 @@ export const Footer: FC = (): ReactElement => {
             >
               <GitHubIcon
                 component={GitHubIcon}
-                style={{ color: "white", margin: "10px", fontSize: 40 }}
+                style={{ color: "#2F4F4F", margin: "10px", fontSize: 40 }}
               />
             </a>
           </Grid>

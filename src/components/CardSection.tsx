@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import React, { useState, useEffect } from "react";
 
 const ContainerHolder = styled("div")({
-  width: "100vw",
+  width: "50vw",
   marginLeft: "50px",
 });
 
@@ -53,12 +53,20 @@ type CardSectionProps = {
 };
 
 const CardSection = ({ image, title }: CardSectionProps) => {
-  const [didScroll, setDidScroll] = useState(false);
-
   useEffect(() => {
-    const scrollInProgress = () => {
-      setDidScroll(true);
+    let didScroll = false;
+
+    const debounce = (func: any, delay: number) => {
+      let timeoutId: any;
+      return (...args: any) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+      };
     };
+
+    const handleScroll = debounce(() => {
+      didScroll = true;
+    }, 10);
 
     const raf = () => {
       if (didScroll) {
@@ -68,20 +76,19 @@ const CardSection = ({ image, title }: CardSectionProps) => {
             window.scrollY / 10
           }%)`;
         });
-        setDidScroll(false);
+        didScroll = false;
       }
+      requestAnimationFrame(raf);
     };
 
-    const animationFrameId = requestAnimationFrame(raf);
+    requestAnimationFrame(raf);
 
-    window.addEventListener("scroll", scrollInProgress);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", scrollInProgress);
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [didScroll]);
-
+  }, []);
   return (
     <ContainerHolder>
       <Container>

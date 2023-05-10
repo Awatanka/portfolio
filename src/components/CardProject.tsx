@@ -1,4 +1,10 @@
-import { ArrowForward, GitHub, LinkedIn, WebAsset } from "@mui/icons-material";
+import {
+  ArrowForward,
+  GitHub,
+  LinkedIn,
+  OndemandVideo,
+  WebAsset,
+} from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import imgUrl from "../assets/gym-photo2.png";
 import { useState } from "react";
@@ -78,20 +84,6 @@ const Card = styled("div")({
     borderRadius: "16px",
     backgroundColor: bgColor,
   },
-  "& ul": {
-    zIndex: "99",
-    position: "absolute",
-    left: "39px",
-    top: "5px",
-    listStyleType: "none",
-    "& li": {
-      width: "2px",
-      height: "2px",
-      borderRadius: "2px",
-      margin: "6px 0",
-      backgroundColor: bgColor,
-    },
-  },
   "& h2": {
     zIndex: "99",
     fontFamily: "Poppins, sans-serif",
@@ -109,13 +101,15 @@ const Card = styled("div")({
     right: "8px",
     bottom: "26px",
     cursor: "pointer",
-    "&:hover": { transform: "scale(1.5)" },
+    "&:hover": {
+      transform: "scale(1.5)",
+      transition: "transform 0.2s ease-in-out",
+    },
   },
 
   "& .pic": {
     zIndex: "100",
     height: "280px",
-    // backgroundImage: `url(${imgUrl})`,
     backgroundSize: "105% 100%",
     filter: "grayscale(100%)",
   },
@@ -137,7 +131,7 @@ const Card = styled("div")({
     bottom: "26px",
     width: "50px",
     height: "50px",
-    backgroundColor: "orange",
+    backgroundColor: "#daa520",
     border: "none",
     borderRadius: "50%",
     cursor: "pointer",
@@ -147,7 +141,7 @@ const Card = styled("div")({
   },
 
   "&:hover button": {
-    transform: "scale(10.5)",
+    transform: "scale(8.5)",
   },
   "&:hover p": {
     color: "black",
@@ -216,16 +210,16 @@ const CardProject: React.FC<CardProjectProps> = ({
                 fontSize="large"
               />
             </i>
-            <i className="icon" ref={linkedInRef} style={{ margin: "20px" }}>
+            {/* <i className="icon" ref={linkedInRef} style={{ margin: "20px" }}>
               <LinkedIn
                 style={{ fill: "#76ADAD" }}
                 className="icon-image"
                 fontSize="large"
               />
-            </i>
+            </i> */}
             <i className="icon" ref={webRef} style={{ margin: "20px" }}>
-              <WebAsset
-                style={{ fill: "447272" }}
+              <OndemandVideo
+                style={{ fill: "#76ADAD" }}
                 className="icon-image"
                 fontSize="large"
               />

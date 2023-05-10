@@ -33,7 +33,6 @@ export const SectionSkill: FC = (): ReactElement => {
 
   return (
     <>
-      <CardSection image={""} title={"Skills"} />
       <Box
         sx={{
           display: "grid",
