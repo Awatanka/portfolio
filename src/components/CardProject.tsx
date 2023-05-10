@@ -1,6 +1,7 @@
 import { ArrowForward, GitHub, OndemandVideo } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
+import ReactCardFlip from "react-card-flip";
 
 const bgColor = "#E6E5E1";
 
@@ -156,64 +157,75 @@ const CardProject: React.FC<CardProjectProps> = ({
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleFlip = () => {
+  const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
 
   return (
     <>
-      <Container className="container">
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <div>
-            <Card className="card">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                }}
-              >
-                <h2>{title}</h2>
-                <i className="arrow">
-                  <ArrowForward fontSize={"large"} />
-                </i>
-              </div>
-              <div
-                className="pic"
-                style={{ backgroundImage: `url(${picBg})` }}
-              ></div>
-              <button></button>
-            </Card>
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+        <Container className="container">
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div>
+              <Card className="card">
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                  }}
+                >
+                  <h2>{title}</h2>
+                  <i className="arrow">
+                    <ArrowForward fontSize={"large"} />
+                  </i>
+                </div>
+                <div
+                  className="pic"
+                  style={{ backgroundImage: `url(${picBg})` }}
+                ></div>
+                <button></button>
+                <button onClick={handleClick}>Click</button>
+              </Card>
+              <button onClick={handleClick}>Click</button>
+            </div>
+            <div
+              style={{
+                width: "50px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <i className="icon" ref={gitHubRef} style={{ margin: "20px" }}>
+                <GitHub
+                  style={{ fill: "#2F4F4F" }}
+                  className="icon-image"
+                  fontSize="large"
+                />
+              </i>
+              <i className="icon" ref={webRef} style={{ margin: "20px" }}>
+                <OndemandVideo
+                  style={{ fill: "#76ADAD" }}
+                  className="icon-image"
+                  fontSize="large"
+                />
+              </i>
+            </div>
           </div>
-          <div
-            style={{
-              width: "50px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <i className="icon" ref={gitHubRef} style={{ margin: "20px" }}>
-              <GitHub
-                style={{ fill: "#2F4F4F" }}
-                className="icon-image"
-                fontSize="large"
-              />
-            </i>
-            <i className="icon" ref={webRef} style={{ margin: "20px" }}>
-              <OndemandVideo
-                style={{ fill: "#76ADAD" }}
-                className="icon-image"
-                fontSize="large"
-              />
-            </i>
-          </div>
-        </div>
 
-        <div className="stack">
-          <p>{description}</p>
+          <div className="stack">
+            <p>{description}</p>
+          </div>
+        </Container>
+        <div>
+          <div
+            className="pic"
+            style={{ backgroundImage: `url(${picBg})` }}
+          ></div>
+          <button onClick={handleClick}>Click</button>
         </div>
-      </Container>
+      </ReactCardFlip>
     </>
   );
 };
