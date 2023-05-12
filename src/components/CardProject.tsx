@@ -3,8 +3,6 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
-const bgColor = "#E6E5E1";
-
 interface CardProjectProps {
   title: string;
   description: string;
@@ -53,35 +51,12 @@ const Card = styled("div")({
   backgroundColor: "#fff",
   overflow: "hidden",
   marginBottom: "4px",
-  "&:before": {
-    content: '""',
-    zIndex: "99",
-    position: "absolute",
-    top: "-10px",
-    left: "32px",
-    display: "block",
-    width: "16px",
-    height: "16px",
-    borderRadius: "16px",
-    backgroundColor: bgColor,
-  },
-  "&:after": {
-    content: '""',
-    zIndex: "99",
-    position: "absolute",
-    bottom: "-10px",
-    left: "32px",
-    display: "block",
-    width: "16px",
-    height: "16px",
-    borderRadius: "16px",
-    backgroundColor: bgColor,
-  },
+
   "& h2": {
     zIndex: "99",
     fontFamily: "Poppins, sans-serif",
     position: "absolute",
-    bottom: "-50px",
+    bottom: "-25px",
     left: "0",
     fontSize: "50px",
     fontWeight: "700",
@@ -148,6 +123,15 @@ const Card = styled("div")({
   },
 });
 
+const CardFlipped = styled("div")({
+  "& h2": {
+    fontFamily: "Poppins, sans-serif",
+    fontSize: "50px",
+    fontWeight: "700",
+    color: "#248282",
+  },
+});
+
 const CardProject: React.FC<CardProjectProps> = ({
   title,
   description,
@@ -167,27 +151,35 @@ const CardProject: React.FC<CardProjectProps> = ({
         <Container className="container">
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div>
-              <Card className="card">
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                  }}
-                >
-                  <h2>{title}</h2>
-                  <i className="arrow">
-                    <ArrowForward fontSize={"large"} />
-                  </i>
-                </div>
-                <div
-                  className="pic"
-                  style={{ backgroundImage: `url(${picBg})` }}
-                ></div>
-                <button></button>
-                <button onClick={handleClick}>Click</button>
-              </Card>
-              <button onClick={handleClick}>Click</button>
+              <button
+                onClick={handleClick}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                <Card className="card">
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <h2>{title}</h2>
+                    <i className="arrow">
+                      <ArrowForward fontSize={"large"} />
+                    </i>
+                  </div>
+                  <div
+                    className="pic"
+                    style={{ backgroundImage: `url(${picBg})` }}
+                  ></div>
+
+                  <button></button>
+                </Card>
+              </button>
             </div>
             <div
               style={{
@@ -218,13 +210,28 @@ const CardProject: React.FC<CardProjectProps> = ({
             <p>{description}</p>
           </div>
         </Container>
-        <div>
-          <div
-            className="pic"
-            style={{ backgroundImage: `url(${picBg})` }}
-          ></div>
-          <button onClick={handleClick}>Click</button>
-        </div>
+        <Container>
+          <button
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onClick={handleClick}
+          >
+            <CardFlipped className="card">
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                }}
+              >
+                <h2>{title}</h2>
+              </div>
+            </CardFlipped>
+          </button>
+        </Container>
       </ReactCardFlip>
     </>
   );

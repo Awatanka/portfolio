@@ -6,6 +6,7 @@ import SectionSkill from "./components/SectionSkill";
 import ProjectSection from "./components/ProjectSection";
 import Hero3 from "./components/Hero3";
 import AboutMe from "./components/AboutMe";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   return (
@@ -15,12 +16,13 @@ function App() {
       <NewHero /> */}
       <Hero3
         title={"Nataliia Sokolova"}
-        subtitle={"<web developer/>, that you are looking for..."}
+        subtitle={" <web developer/> you are looking for."}
       />
       <Container maxWidth="lg">
         <AboutMe />
         <ProjectSection />
         <SectionSkill />
+        <ContactSection />
       </Container>
       <Footer />
     </>

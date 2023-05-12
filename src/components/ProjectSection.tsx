@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardSection from "./CardSection";
 import { Box, Typography } from "@mui/material";
 import gymImage from "../assets/gym-photo2.png";
@@ -9,7 +9,6 @@ import inStock from "../assets/inStock.png";
 import portfolio from "../assets/portfolio.png";
 import CardProject from "./CardProject";
 import { motion } from "framer-motion";
-import ReactCardFlip from "react-card-flip";
 
 const ProjectSection = () => {
   const textVariants = {
@@ -21,20 +20,13 @@ const ProjectSection = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 2,
       },
     },
   };
-  const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleClick = () => {
-    setIsFlipped(!isFlipped);
-  };
   return (
     <>
-      {/* <Typography variant="h4" style={{ padding: "10px 0" }}>
-        Projects
-      </Typography> */}
       <Box sx={{ margin: "50px", display: "flex", flexDirection: "column" }}>
         <motion.div variants={textVariants} initial="hidden" animate="visible">
           <Typography>
@@ -50,13 +42,6 @@ const ProjectSection = () => {
             possibilities of what we can create together.
           </Typography>
         </motion.div>
-        <motion.div
-          animate={{
-            x: ["100px", "0px", "100px"],
-          }}
-        >
-          Weeee I'm animated
-        </motion.div>
       </Box>
       <Box
         sx={{
@@ -67,7 +52,6 @@ const ProjectSection = () => {
           margin: "auto 0",
         }}
       >
-        {" "}
         <CardProject
           title={"The Gym"}
           description={"Tech Stack: HTML, Sass, JavaScript, API"}
@@ -107,35 +91,6 @@ const ProjectSection = () => {
       </Box>
 
       <CardSection title={"Projects"} image={""}></CardSection>
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-        <div
-          style={{
-            backgroundColor: "green",
-            height: 100,
-            color: "#fff",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          How do you define the meaning of success?
-          <button onClick={handleClick}>Click to flip</button>
-        </div>
-
-        <div
-          style={{
-            backgroundColor: "red",
-            height: 100,
-            color: "#fff",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          Create video tutorials on YouTube
-          <button onClick={handleClick}>Click to flip</button>
-        </div>
-      </ReactCardFlip>
     </>
   );
 };

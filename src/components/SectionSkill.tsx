@@ -47,6 +47,7 @@ export const SectionSkill: FC = (): ReactElement => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+
             //   ...bounceClassName,
             "&:hover": {
               ...hoverStyles,

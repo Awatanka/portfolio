@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Box, Typography } from "@mui/material";
-import me from "../assets/me.jpg";
+import me from "../assets/me2.jpg";
 
 const AboutMe: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const AboutMe: React.FC = () => {
         src={me}
         alt="my photo"
         style={{
-          width: "250px",
+          width: "400px",
           borderRadius: "10px",
         }}
         whileHover={{ scale: 1.1 }}

@@ -51,9 +51,9 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", background: "#2F4F4F" }}>
+    <Box sx={{ display: "flex", background: "#003035" }}>
       <CssBaseline />
-      <AppBar component="nav" style={{ background: "#2F4F4F", height: "80px" }}>
+      <AppBar component="nav" style={{ background: "#003035", height: "80px" }}>
         <Toolbar>
           <IconButton
             color="inherit"

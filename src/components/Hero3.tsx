@@ -1,4 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
+
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
@@ -26,11 +28,13 @@ const HeroTitle = styled(Typography)({
   fontWeight: "bold",
   fontSize: "4rem",
   marginBottom: "1rem",
+  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
 });
 
 const HeroSubtitle = styled(Typography)({
   color: "white",
-  fontSize: "1.5rem",
+  fontSize: "26px",
+  fontWeight: "300",
 });
 
 type HeroProps = {
@@ -38,7 +42,25 @@ type HeroProps = {
   subtitle: string;
 };
 
+const rotatingWords = [
+  "An innovative",
+  "A collaborative",
+  "A reliable",
+  "A detail-oriented",
+];
+
 const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex(
+        (currentWordIndex) => (currentWordIndex + 1) % rotatingWords.length
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <HeroContainer>
       <motion.div
@@ -64,7 +86,33 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
             animate={{ opacity: 0.8 }}
             transition={{ duration: 1, delay: 2 }}
           >
-            <HeroSubtitle variant="h2">{subtitle}</HeroSubtitle>
+            <HeroSubtitle variant="h2">
+              <motion.span
+                key={currentWordIndex}
+                initial={{
+                  opacity: 0,
+                  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
+                }}
+                animate={{
+                  opacity: 1,
+                  textShadow: "0px 0px 5px rgba(255,255,255,0.9)",
+                }}
+                exit={{
+                  opacity: 0,
+                  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
+                }}
+                transition={{
+                  duration: 1.5,
+                  delay: 0.2,
+                  ease: "easeInOut",
+                  staggerChildren: 0.1,
+                }}
+                style={{ display: "inline-block", color: "#fff" }}
+              >
+                {rotatingWords[currentWordIndex]}
+              </motion.span>
+              {subtitle}
+            </HeroSubtitle>
           </motion.div>
         </HeroContent>
       </motion.div>
@@ -78,7 +126,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "#373737",
+          backgroundColor: "RGB(55, 55, 55, 0.6)",
         }}
       />
     </HeroContainer>
