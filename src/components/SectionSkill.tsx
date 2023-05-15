@@ -11,21 +11,21 @@ export const SectionSkill: FC = (): ReactElement => {
     transition: "transform 0.2s ease-out",
   };
 
-  //   const delay = 0.2;
-  //   const bounceClassName = {
-  //     animation: `bounce 3s infinite ${delay}s`,
-  //     "@keyframes bounce": {
-  //       "0%": {
-  //         transform: "translateY(0)",
-  //       },
-  //       "50%": {
-  //         transform: "translateY(-10px)",
-  //       },
-  //       "100%": {
-  //         transform: "translateY(0)",
-  //       },
-  //     },
-  //   };
+  const delay = 0.2;
+  const bounceClassName = {
+    animation: `bounce 3s infinite ${delay}s`,
+    "@keyframes bounce": {
+      "0%": {
+        transform: "translateY(0)",
+      },
+      "50%": {
+        transform: "translateY(-10px)",
+      },
+      "100%": {
+        transform: "translateY(0)",
+      },
+    },
+  };
 
   const hoverStyles = {
     transform: "scale(1.1)",
@@ -33,13 +33,24 @@ export const SectionSkill: FC = (): ReactElement => {
 
   return (
     <>
+      <Typography
+        variant="h4"
+        style={{
+          padding: "20px",
+          borderLeft: "3px solid #A5B3C7",
+          margin: "20px 0",
+          color: "#013B41",
+        }}
+      >
+        Skills
+      </Typography>
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
           gap: "20px",
           padding: "0 5px",
-          margin: "150px",
+          margin: "40px",
         }}
       >
         <Box
@@ -48,7 +59,7 @@ export const SectionSkill: FC = (): ReactElement => {
             flexDirection: "column",
             alignItems: "center",
 
-            //   ...bounceClassName,
+            ...bounceClassName,
             "&:hover": {
               ...hoverStyles,
             },
@@ -94,7 +105,7 @@ export const SectionSkill: FC = (): ReactElement => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            //   ...bounceClassName,
+            ...bounceClassName,
           }}
         >
           <Box sx={{ ...boxStyles }}>
@@ -138,7 +149,7 @@ export const SectionSkill: FC = (): ReactElement => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            //   ...bounceClassName,
+            ...bounceClassName,
           }}
         >
           <Box sx={{ ...boxStyles }}>
@@ -200,7 +211,7 @@ export const SectionSkill: FC = (): ReactElement => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            //   ...bounceClassName,
+            ...bounceClassName,
           }}
         >
           <Box
@@ -223,7 +234,7 @@ export const SectionSkill: FC = (): ReactElement => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            //   ...bounceClassName,
+            // ...bounceClassName,
           }}
         >
           <Box
@@ -246,7 +257,7 @@ export const SectionSkill: FC = (): ReactElement => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            //   ...bounceClassName,
+            ...bounceClassName,
           }}
         >
           <Box

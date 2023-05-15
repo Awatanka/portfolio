@@ -27,12 +27,29 @@ const ProjectSection = () => {
 
   return (
     <>
-      <Box sx={{ margin: "50px", display: "flex", flexDirection: "column" }}>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Typography
+          variant="h4"
+          style={{
+            padding: "20px",
+            borderLeft: "3px solid #A5B3C7",
+            margin: "20px 0",
+            color: "#013B41",
+          }}
+        >
+          Welcome to my projects section!
+        </Typography>
         <motion.div variants={textVariants} initial="hidden" animate="visible">
-          <Typography>
-            <Typography variant="h4" style={{ padding: "10px 0" }}>
-              Welcome to my projects section!{" "}
-            </Typography>
+          <Typography
+            style={{
+              padding: "20px 0",
+              margin: "20px 0",
+              color: "#013B41",
+              fontSize: "18px",
+              lineHeight: "1.6",
+              textAlign: "justify",
+            }}
+          >
             Here, you can explore some of my latest web development projects
             that showcase my skills and passion for creating engaging and
             user-friendly websites. From responsive designs to intuitive user
