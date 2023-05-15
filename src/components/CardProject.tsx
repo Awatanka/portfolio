@@ -1,4 +1,5 @@
 import { ArrowForward, GitHub, OndemandVideo } from "@mui/icons-material";
+import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
@@ -10,6 +11,8 @@ interface CardProjectProps {
   linkedInRef?: string;
   webRef?: string;
   picBg?: string;
+  projectSummaryItems?: [];
+  cardBody?: string;
 }
 
 const Container = styled("div")({
@@ -138,6 +141,8 @@ const CardProject: React.FC<CardProjectProps> = ({
   gitHubRef,
   webRef,
   picBg,
+  projectSummaryItems,
+  cardBody,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -227,11 +232,26 @@ const CardProject: React.FC<CardProjectProps> = ({
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: "column",
                   justifyContent: "center",
                 }}
               >
-                <h2>{title}</h2>
+                <Box style={{ fontSize: "10px", padding: 0 }}>
+                  <h2>{title}</h2>
+                  {projectSummaryItems && projectSummaryItems.length > 0 ? (
+                    <List>
+                      {projectSummaryItems.map((sum, index) => (
+                        <ListItem key={index}>
+                          <ListItemText
+                            secondary={sum}
+                            style={{ padding: 0 }}
+                          />
+                        </ListItem>
+                      ))}
+                    </List>
+                  ) : null}
+                  <Typography variant="body1">{cardBody}</Typography>
+                </Box>
               </div>
             </CardFlipped>
           </button>

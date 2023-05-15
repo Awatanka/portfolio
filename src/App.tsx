@@ -1,20 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SectionSkill from "./components/SectionSkill";
 import ProjectSection from "./components/ProjectSection";
-import Hero3 from "./components/Hero3";
+import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
 import ContactSection from "./components/ContactSection";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollButtonThreshold = 200;
+
+      if (scrollTop > scrollButtonThreshold) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Header />
-      {/* <Hero />
-      <NewHero /> */}
-      <Hero3
+      <Hero
         title={"Nataliia Sokolova"}
         subtitle={" <web developer/> you are looking for."}
       />
@@ -24,6 +42,7 @@ function App() {
         <SectionSkill />
         <ContactSection />
       </Container>
+      {showScrollButton && <ScrollToTopButton />}
       <Footer />
     </>
   );

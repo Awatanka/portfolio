@@ -1,92 +1,135 @@
-import { styled, keyframes } from "@mui/material/styles";
 import React from "react";
+import { useState, useEffect } from "react";
+
 import { Box, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { motion } from "framer-motion";
 
-const Hero: React.FC = () => {
-  const wavesAnimation = keyframes`
-    0% {
-      transform: translate(-50%, -25%) rotate(0deg);
-    }
-    100% {
-      transform: translate(-50%, -25%) rotate(360deg);
-    }
-  `;
+const HeroContainer = styled(Box)({
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh",
+  backgroundImage: `url(${require("../assets/sea.jpg")})`,
+  backgroundRepeat: "repeat",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+});
 
-  const Waves = styled("div")(({ theme }) => ({
-    position: "absolute",
-    top: "calc(100% - 200px)",
-    left: 0,
-    right: 0,
-    height: 200,
-    backgroundColor: "#2f4f4f",
-    boxShadow: `inset 0 0 50px ${theme.palette.common.black},`,
-    transition: "500ms",
-    "&:before, &:after": {
-      content: "''",
-      position: "absolute",
-      width: "300vw",
-      height: "300vw",
-      bottom: "-65vw",
-      left: "50%",
-      transform: "translate(-50%, -25%)",
-      borderRadius: "44%",
-      animation: `${wavesAnimation} 15s linear infinite`,
-    },
-    "&:before": {
-      background: "rgba(51, 51, 51, 1)",
-    },
-    "&:after": {
-      background: "rgba(51, 51, 51, 0.5)",
-      animationDuration: "60s",
-    },
-  }));
+const HeroContent = styled(Box)({
+  position: "relative",
+  textAlign: "center",
+  zIndex: 1,
+});
+
+const HeroTitle = styled(Typography)({
+  color: "white",
+  fontWeight: "bold",
+  fontSize: "4rem",
+  marginBottom: "1rem",
+  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
+});
+
+const HeroSubtitle = styled(Typography)({
+  color: "white",
+  fontSize: "26px",
+  fontWeight: "300",
+});
+
+type HeroProps = {
+  title: string;
+  subtitle: string;
+};
+
+const rotatingWords = [
+  "An innovative",
+  "A collaborative",
+  "A reliable",
+  "A detail-oriented",
+];
+
+const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex(
+        (currentWordIndex) => (currentWordIndex + 1) % rotatingWords.length
+      );
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <Box
-      sx={{
-        position: "relative",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: "100vh",
-        backgroundColor: "#333333",
-      }}
-    >
-      <Box sx={{ maxWidth: "600px", margin: "0 auto", padding: "0 20px" }}>
-        <Typography
-          variant="h2"
-          sx={{
-            position: "relative",
-            zIndex: 1,
-            fontSize: "4.5rem",
-            margin: "0 0 10px",
-            lineHeight: 1,
-            color: "rgba(255, 255, 255, 0.9)",
-          }}
-        >
-          Nataliia Sokolova
-        </Typography>
-        <Typography
-          sx={{
-            position: "relative",
-            zIndex: 1,
-            fontSize: "1.1rem",
-            color: "rgba(255, 255, 255, 0.5)",
-            lineHeight: "1.4",
-            maxWidth: "600px",
-            padding: "0 20px",
-            textAlign: "center",
-          }}
-        >
-          Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor
-          fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa
-          ac turpis faucibus orci luctus non
-        </Typography>
-      </Box>
-      <Waves />
-    </Box>
+    <HeroContainer>
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2 }}
+      >
+        <HeroContent>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <HeroTitle
+              variant="h1"
+              style={{ fontFamily: "fantasy", letterSpacing: "5px" }}
+            >
+              {title}
+            </HeroTitle>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.8 }}
+            transition={{ duration: 1, delay: 2 }}
+          >
+            <HeroSubtitle variant="h2">
+              <motion.span
+                key={currentWordIndex}
+                initial={{
+                  opacity: 0,
+                  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
+                }}
+                animate={{
+                  opacity: 1,
+                  textShadow: "0px 0px 5px rgba(255,255,255,0.9)",
+                }}
+                exit={{
+                  opacity: 0,
+                  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
+                }}
+                transition={{
+                  duration: 1.5,
+                  delay: 0.2,
+                  ease: "easeInOut",
+                  staggerChildren: 0.1,
+                }}
+                style={{ display: "inline-block", color: "#fff" }}
+              >
+                {rotatingWords[currentWordIndex]}
+              </motion.span>
+              {subtitle}
+            </HeroSubtitle>
+          </motion.div>
+        </HeroContent>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ duration: 2, delay: 1.5 }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "RGB(55, 55, 55, 0.6)",
+        }}
+      />
+    </HeroContainer>
   );
 };
 
