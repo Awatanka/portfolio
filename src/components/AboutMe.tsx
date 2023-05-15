@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Box, Typography } from "@mui/material";
+
 import me from "../assets/me2.jpg";
 
 const AboutMe: React.FC = () => {
@@ -17,12 +18,13 @@ const AboutMe: React.FC = () => {
       </Typography>
       <Box
         sx={{
-          display: "flex",
-          minHeight: "100vh",
-          marginTop: "20px",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: "20px",
+          margin: "20px 0",
         }}
       >
-        <Box sx={{ flex: 1, paddingRight: "20px" }}>
+        <Box>
           <Typography
             style={{
               fontStyle: "italic",
@@ -59,13 +61,14 @@ const AboutMe: React.FC = () => {
             and suggestions, ensuring that every project I work on is a success.
           </Typography>
         </Box>
-        <Box sx={{ flex: 1 }}>
+        <Box>
           <motion.img
             src={me}
             alt="my photo"
             style={{
               width: "350px",
               borderRadius: "10px",
+              justifySelf: "center",
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

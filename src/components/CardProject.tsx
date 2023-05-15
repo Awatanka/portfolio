@@ -147,7 +147,11 @@ const CardProject: React.FC<CardProjectProps> = ({
 
   return (
     <>
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <ReactCardFlip
+        isFlipped={isFlipped}
+        flipDirection="horizontal"
+        containerStyle={{ margin: "0 auto" }}
+      >
         <Container className="container">
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div>
