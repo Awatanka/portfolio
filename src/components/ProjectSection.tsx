@@ -25,6 +25,66 @@ const ProjectSection = () => {
     },
   };
 
+  const projects = [
+    {
+      title: "The Gym",
+      description: "Tech Stack: HTML, Sass, JavaScript, API",
+      picBg: gymImage,
+      summary: [
+        "Implemented features to retrieve comment data from an API and display it on the webpage.",
+        "Enabled users to add new comments, which are stored on the back-end using the API.",
+        "Implemented a display mechanism for new comments alongside existing ones, with the newest comments shown at the top.",
+        "Created multiple pages to showcase show data retrieved from the API.",
+        "Utilized JavaScript DOM manipulation and the flexbox layout to dynamically generate and render concert data from a JavaScript array into the HTML content.",
+        "Employed JavaScript and Sass to apply different styling to individual rows of the shows table based on their state.",
+        "Implemented comment like functionality, allowing users to like comments through a ❤️ button that triggers an API request and updates the DOM accordingly.",
+        "Implemented comment delete functionality, enabling users to remove comments through a delete button that interacts with the API and updates the DOM accordingly.",
+      ],
+    },
+    {
+      title: "EA SharePlay",
+      description: "Tech Stack: HTML, Sass, React",
+      picBg: eaSportImage,
+      summary: [
+        // Summary items for EA SharePlay
+      ],
+    },
+    {
+      title: "Vancity for U",
+      description: "Tech Stack: HTML, CSS, Bootstrap",
+      picBg: vanCity,
+      summary: [
+        // Summary items for Vancity for U
+      ],
+    },
+    {
+      title: "Rentsy",
+      description:
+        "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API",
+      picBg: rentsy,
+      summary: [
+        // Summary items for Rentsy
+      ],
+    },
+    {
+      title: "InStock",
+      description:
+        "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, API",
+      picBg: inStock,
+      summary: [
+        // Summary items for InStock
+      ],
+    },
+    {
+      title: "Portfolio",
+      description: "Tech Stack: React, Sass, TypeScript, MUI, Framer Motion",
+      picBg: portfolio,
+      summary: [
+        // Summary items for Portfolio
+      ],
+    },
+  ];
+
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -69,42 +129,15 @@ const ProjectSection = () => {
           margin: "auto 0",
         }}
       >
-        <CardProject
-          title={"The Gym"}
-          description={"Tech Stack: HTML, Sass, JavaScript, API"}
-          picBg={gymImage}
-        ></CardProject>
-        <CardProject
-          title={"EA SharePlay"}
-          description={"Tech Stack: HTML, Sass, React"}
-          picBg={eaSportImage}
-        ></CardProject>
-        <CardProject
-          title={"Vancity for U"}
-          description={"Tech Stack: HTML, CSS, Bootstrap"}
-          picBg={vanCity}
-        ></CardProject>
-        <CardProject
-          title={"Rentsy"}
-          description={
-            "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API"
-          }
-          picBg={rentsy}
-        ></CardProject>
-        <CardProject
-          title={"InStock"}
-          description={
-            "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, API"
-          }
-          picBg={inStock}
-        ></CardProject>
-        <CardProject
-          title={"Portfolio"}
-          description={
-            "Tech Stack: React, Sass, TypeScript, MUI, Framer Motion"
-          }
-          picBg={portfolio}
-        ></CardProject>
+        {projects.map((project, index) => (
+          <CardProject
+            key={index}
+            title={project.title}
+            description={project.description}
+            picBg={project.picBg}
+            projectSummaryItems={project.summary}
+          />
+        ))}
       </Box>
 
       <CardSection title={"Projects"} image={""}></CardSection>

@@ -11,7 +11,7 @@ interface CardProjectProps {
   linkedInRef?: string;
   webRef?: string;
   picBg?: string;
-  projectSummaryItems?: [];
+  projectSummaryItems?: string[];
   cardBody?: string;
 }
 
@@ -240,17 +240,22 @@ const CardProject: React.FC<CardProjectProps> = ({
                   <h2>{title}</h2>
                   {projectSummaryItems && projectSummaryItems.length > 0 ? (
                     <List>
-                      {projectSummaryItems.map((sum, index) => (
-                        <ListItem key={index}>
-                          <ListItemText
-                            secondary={sum}
-                            style={{ padding: 0 }}
-                          />
-                        </ListItem>
-                      ))}
+                      {projectSummaryItems.map((sum, index) => {
+                        console.log("Summary Item:", sum); // Log the summary item
+                        return (
+                          <ListItem key={index}>
+                            <ListItemText
+                              secondary={sum}
+                              style={{ padding: 0 }}
+                            />
+                          </ListItem>
+                        );
+                      })}
                     </List>
                   ) : null}
-                  <Typography variant="body1">{cardBody}</Typography>
+                  {cardBody && (
+                    <Typography variant="body1">{cardBody}</Typography>
+                  )}
                 </Box>
               </div>
             </CardFlipped>
