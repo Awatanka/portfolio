@@ -13,6 +13,7 @@ interface CardProjectProps {
   picBg?: string;
   projectSummaryItems?: string[];
   cardBody?: string;
+  keyDetails?: string;
 }
 
 const Container = styled("div")({
@@ -143,6 +144,7 @@ const CardProject: React.FC<CardProjectProps> = ({
   picBg,
   projectSummaryItems,
   cardBody,
+  keyDetails,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -255,6 +257,9 @@ const CardProject: React.FC<CardProjectProps> = ({
                   ) : null}
                   {cardBody && (
                     <Typography variant="body1">{cardBody}</Typography>
+                  )}
+                  {keyDetails && (
+                    <Typography variant="body1">{keyDetails}</Typography>
                   )}
                 </Box>
               </div>

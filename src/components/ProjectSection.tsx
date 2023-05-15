@@ -33,21 +33,24 @@ const ProjectSection = () => {
       summary: [
         "Implemented features to retrieve comment data from an API and display it on the webpage.",
         "Enabled users to add new comments, which are stored on the back-end using the API.",
-        "Implemented a display mechanism for new comments alongside existing ones, with the newest comments shown at the top.",
-        "Created multiple pages to showcase show data retrieved from the API.",
         "Utilized JavaScript DOM manipulation and the flexbox layout to dynamically generate and render concert data from a JavaScript array into the HTML content.",
         "Employed JavaScript and Sass to apply different styling to individual rows of the shows table based on their state.",
         "Implemented comment like functionality, allowing users to like comments through a ❤️ button that triggers an API request and updates the DOM accordingly.",
         "Implemented comment delete functionality, enabling users to remove comments through a delete button that interacts with the API and updates the DOM accordingly.",
       ],
+      details: "3 sprints, personal project, 3 weeks",
     },
     {
       title: "EA SharePlay",
       description: "Tech Stack: HTML, Sass, React",
       picBg: eaSportImage,
       summary: [
-        // Summary items for EA SharePlay
+        "Participated in a cross-functional hackathon in partnership with Electronic Arts, where I contributed to a winning project that was recognized as the top solution out of 25 teams.",
+        "Demonstrated strong communication and teamwork skills, collaborating effectively with a team of 3 developers and 3 UX designers.",
+        "Developed a working prototype of the EA SharePlay feature within a 24-hour timeframe.",
       ],
+      details:
+        "the team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     },
     {
       title: "Vancity for U",

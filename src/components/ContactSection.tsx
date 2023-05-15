@@ -19,7 +19,7 @@ const AboutMe: React.FC = () => {
       }}
     >
       <Typography variant="h4" style={{ padding: "10px 0" }}>
-        Let's Collaborate!
+        Let's Talk!
       </Typography>
       <Typography
         variant="body1"
