@@ -16,7 +16,7 @@ interface CardProjectProps {
   keyDetails?: string;
 }
 
-const Container = styled("div")({
+const Container = styled("div")(({ theme }) => ({
   width: "550px",
   height: "450px",
   display: "flex",
@@ -46,9 +46,18 @@ const Container = styled("div")({
       transform: "scale(1.1)",
     },
   },
-});
+  [theme.breakpoints.down("sm")]: {
+    width: "275px",
+    height: "225px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    boxShadow: theme.shadows[2],
+  },
+}));
 
-const Card = styled("div")({
+const Card = styled("div")(({ theme }) => ({
   position: "relative",
   width: "450px",
   height: "370px",
@@ -60,7 +69,7 @@ const Card = styled("div")({
     zIndex: "99",
     fontFamily: "Poppins, sans-serif",
     position: "absolute",
-    bottom: "-25px",
+    bottom: "-50px",
     left: "0",
     fontSize: "50px",
     fontWeight: "700",
@@ -81,7 +90,7 @@ const Card = styled("div")({
 
   "& .pic": {
     zIndex: "100",
-    height: "280px",
+    height: "260px",
     backgroundSize: "105% 100%",
     filter: "grayscale(100%)",
   },
@@ -125,7 +134,28 @@ const Card = styled("div")({
     opacity: 1,
     transform: " scale(1)",
   },
-});
+  [theme.breakpoints.down("sm")]: {
+    width: "225px",
+    height: "185px",
+    "& h2": {
+      zIndex: "99",
+      fontFamily: "Poppins, sans-serif",
+      position: "absolute",
+      bottom: "-10px",
+      left: "0",
+      fontSize: "25px",
+      fontWeight: "700",
+      color: "#248282",
+      pointerEvents: "none",
+    },
+    "& .pic": {
+      zIndex: "100",
+      height: "140px",
+      backgroundSize: "105% 100%",
+      filter: "grayscale(100%)",
+    },
+  },
+}));
 
 const CardFlipped = styled("div")({
   "& h2": {

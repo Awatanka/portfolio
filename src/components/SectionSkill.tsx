@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { FC, ReactElement } from "react";
-import CardSection from "./CardSection";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const SectionSkill: FC = (): ReactElement => {
   const boxStyles = {
@@ -9,26 +10,6 @@ export const SectionSkill: FC = (): ReactElement => {
     borderRadius: "50%",
     boxShadow: "0 0 15px rgba(0, 0, 0, 0.2)",
     transition: "transform 0.2s ease-out",
-  };
-
-  const delay = 0.2;
-  // const bounceClassName = {
-  //   animation: `bounce 3s infinite ${delay}s`,
-  //   "@keyframes bounce": {
-  //     "0%": {
-  //       transform: "translateY(0)",
-  //     },
-  //     "50%": {
-  //       transform: "translateY(-10px)",
-  //     },
-  //     "100%": {
-  //       transform: "translateY(0)",
-  //     },
-  //   },
-  // };
-
-  const hoverStyles = {
-    transform: "scale(1.1)",
   };
 
   const skillsData = [
@@ -84,6 +65,11 @@ export const SectionSkill: FC = (): ReactElement => {
     },
   ];
 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-10px 0px",
+  });
+
   return (
     <>
       <Typography
@@ -98,6 +84,7 @@ export const SectionSkill: FC = (): ReactElement => {
         Skills
       </Typography>
       <Box
+        ref={ref}
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
@@ -107,27 +94,33 @@ export const SectionSkill: FC = (): ReactElement => {
         }}
       >
         {skillsData.map((skill, index) => (
-          <Box
+          <motion.div
             key={index}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              // ...bounceClassName,
-              "&:hover": {
-                ...hoverStyles,
-              },
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: index * 0.1 }}
+            whileHover={{
+              rotate: 360,
+              cursor: "pointer",
             }}
           >
-            <Box sx={{ ...boxStyles }}>
-              <img
-                src={skill.iconSrc}
-                alt={`${skill.name} logo`}
-                style={{ height: "100%" }}
-              />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Box sx={{ ...boxStyles }}>
+                <img
+                  src={skill.iconSrc}
+                  alt={`${skill.name} logo`}
+                  style={{ height: "100%" }}
+                />
+              </Box>
+              <Typography>{skill.name}</Typography>
             </Box>
-            <Typography>{skill.name}</Typography>
-          </Box>
+          </motion.div>
         ))}
       </Box>
     </>

@@ -9,20 +9,17 @@ import inStock from "../assets/inStock.png";
 import portfolio from "../assets/portfolio.png";
 import CardProject from "./CardProject";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const ProjectSection = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
+
   const textVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 2,
-      },
-    },
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 2 } },
   };
 
   const projects = [
@@ -90,19 +87,25 @@ const ProjectSection = () => {
 
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Typography
-          variant="h4"
-          style={{
-            padding: "20px",
-            borderLeft: "3px solid #A5B3C7",
-            margin: "20px 0",
-            color: "#013B41",
-          }}
-        >
-          Welcome to my projects section!
-        </Typography>
-        <motion.div variants={textVariants} initial="hidden" animate="visible">
+      <motion.div
+        ref={ref}
+        variants={textVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Typography
+            variant="h4"
+            style={{
+              padding: "20px",
+              borderLeft: "3px solid #A5B3C7",
+              margin: "20px 0",
+              color: "#013B41",
+            }}
+          >
+            Welcome to my projects section!
+          </Typography>
+
           <Typography
             style={{
               padding: "20px 0",
@@ -121,29 +124,28 @@ const ProjectSection = () => {
             and their users. So, take a look around and get inspired by the
             possibilities of what we can create together.
           </Typography>
-        </motion.div>
-      </Box>
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
-          gridAutoFlow: "row",
-          gap: "80px",
-          margin: "auto 0",
-        }}
-      >
-        {projects.map((project, index) => (
-          <CardProject
-            key={index}
-            title={project.title}
-            description={project.description}
-            picBg={project.picBg}
-            projectSummaryItems={project.summary}
-          />
-        ))}
-      </Box>
-
-      <CardSection title={"Projects"} image={""}></CardSection>
+        </Box>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+            gridAutoFlow: "row",
+            gap: "80px",
+            margin: "auto 0",
+          }}
+        >
+          {projects.map((project, index) => (
+            <CardProject
+              key={index}
+              title={project.title}
+              description={project.description}
+              picBg={project.picBg}
+              projectSummaryItems={project.summary}
+              keyDetails={project.details}
+            />
+          ))}
+        </Box>
+      </motion.div>
     </>
   );
 };
