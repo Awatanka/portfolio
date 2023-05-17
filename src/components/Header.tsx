@@ -53,7 +53,10 @@ export default function DrawerAppBar(props: Props) {
   return (
     <Box sx={{ display: "flex", background: "#013B41" }}>
       <CssBaseline />
-      <AppBar component="nav" style={{ background: "#013B41", height: "80px" }}>
+      <AppBar
+        component="nav"
+        style={{ background: "#013B41", height: "80px", padding: "10px 40px" }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"

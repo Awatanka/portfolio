@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import CreativeButton from "./Button";
 
 const HeroContainer = styled(Box)({
   position: "relative",
@@ -61,12 +62,20 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
     return () => clearInterval(interval);
   }, []);
 
+  const buttonVariants = {
+    initial: { scale: 0 },
+    animate: {
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
+
   return (
     <HeroContainer>
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 1 }}
       >
         <HeroContent>
           <motion.div
@@ -81,10 +90,11 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
               {title}
             </HeroTitle>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.8 }}
-            transition={{ duration: 1, delay: 2 }}
+            transition={{ duration: 1, delay: 1.5 }}
           >
             <HeroSubtitle variant="h2">
               <motion.span
@@ -114,19 +124,32 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
               {subtitle}
             </HeroSubtitle>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 2 }}
+          >
+            <motion.div
+              variants={buttonVariants}
+              initial="initial"
+              animate="animate"
+            >
+              <CreativeButton title={"Send message"} />
+            </motion.div>
+          </motion.div>
         </HeroContent>
       </motion.div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.7 }}
-        transition={{ duration: 2, delay: 1.5 }}
+        transition={{ duration: 1, delay: 2 }}
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "RGB(55, 55, 55, 0.6)",
+          backgroundColor: "rgba(55, 55, 55, 0.6)",
         }}
       />
     </HeroContainer>

@@ -14,14 +14,30 @@ export const SectionSkill: FC = (): ReactElement => {
 
   const skillsData = [
     {
+      name: "HTML",
+      iconSrc:
+        "https://icongr.am/devicon/html5-original.svg?size=128&color=currentColor",
+    },
+
+    {
+      name: "Sass",
+      iconSrc:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
+    },
+    {
+      name: "CSS",
+      iconSrc:
+        "https://icongr.am/devicon/css3-original.svg?size=128&color=currentColor",
+    },
+    {
       name: "JavaScript",
       iconSrc:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     },
     {
-      name: "Sass",
+      name: "TypeScript",
       iconSrc:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
+        "https://icongr.am/devicon/typescript-original.svg?size=128&color=currentColor",
     },
     {
       name: "React",
@@ -44,6 +60,11 @@ export const SectionSkill: FC = (): ReactElement => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
     },
     {
+      name: "MySql",
+      iconSrc:
+        "https://icongr.am/devicon/mysql-original-wordmark.svg?size=128&color=currentColor",
+    },
+    {
       name: "Node",
       iconSrc:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg",
@@ -54,14 +75,14 @@ export const SectionSkill: FC = (): ReactElement => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     },
     {
-      name: "TypeScript",
-      iconSrc:
-        "https://icongr.am/devicon/typescript-original.svg?size=128&color=currentColor",
-    },
-    {
       name: "Knex",
       iconSrc:
         "https://www.lanreakinola.dev/static/media/knex.03526424fd1de8026c75.webp",
+    },
+    {
+      name: "GitLab",
+      iconSrc:
+        "https://icongr.am/devicon/gitlab-original.svg?size=128&color=currentColor",
     },
   ];
 

@@ -130,7 +130,7 @@ const ProjectSection = () => {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
             gridAutoFlow: "row",
-            gap: "80px",
+            gap: "40px",
             margin: "auto 0",
           }}
         >

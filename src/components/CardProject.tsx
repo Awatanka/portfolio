@@ -17,8 +17,8 @@ interface CardProjectProps {
 }
 
 const Container = styled("div")(({ theme }) => ({
-  width: "550px",
-  height: "450px",
+  width: "500px",
+  height: "400px",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -39,12 +39,23 @@ const Container = styled("div")(({ theme }) => ({
     margin: "5px 25px",
     transition: "all 0.2s ease",
   },
+  "& .icon": {
+    margin: "20px 0",
+  },
   "& .icon-image": {
     "&:hover": {
       fill: "#2F4F4F",
       cursor: "pointer",
       transform: "scale(1.1)",
     },
+  },
+  "& .icon-holder": {
+    width: "70px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    margine: "0 auto",
   },
   [theme.breakpoints.down("sm")]: {
     width: "275px",
@@ -59,19 +70,21 @@ const Container = styled("div")(({ theme }) => ({
 
 const Card = styled("div")(({ theme }) => ({
   position: "relative",
-  width: "450px",
-  height: "370px",
+  width: "380px",
+  height: "320px",
   backgroundColor: "#fff",
   overflow: "hidden",
   marginBottom: "4px",
+  marginLeft: "40px",
 
   "& h2": {
     zIndex: "99",
     fontFamily: "Poppins, sans-serif",
     position: "absolute",
-    bottom: "-50px",
+    bottom: "-40px",
     left: "0",
-    fontSize: "50px",
+    fontSize: "45px",
+    padding: "5px 0",
     fontWeight: "700",
     color: "#248282",
     pointerEvents: "none",
@@ -80,7 +93,7 @@ const Card = styled("div")(({ theme }) => ({
     zIndex: "100",
     position: "absolute",
     right: "8px",
-    bottom: "26px",
+    bottom: "6px",
     cursor: "pointer",
     "&:hover": {
       transform: "scale(1.5)",
@@ -90,8 +103,10 @@ const Card = styled("div")(({ theme }) => ({
 
   "& .pic": {
     zIndex: "100",
-    height: "260px",
-    backgroundSize: "105% 100%",
+    height: "245px",
+    width: "400px",
+    marginTop: "20px",
+    backgroundSize: "100% 100%",
     filter: "grayscale(100%)",
   },
 
@@ -99,17 +114,10 @@ const Card = styled("div")(({ theme }) => ({
     transitionDelay: "0.4s",
   },
 
-  "& .dr": {
-    position: "absolute",
-    bottom: "16px",
-    right: "16px",
-    width: "100px",
-  },
-
   "& button": {
     position: "absolute",
     right: "0px",
-    bottom: "26px",
+    bottom: "2px",
     width: "50px",
     height: "50px",
     backgroundColor: "#daa520",
@@ -191,8 +199,8 @@ const CardProject: React.FC<CardProjectProps> = ({
       >
         <Container className="container">
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <div>
-              <button
+            <div style={{ width: "100%" }}>
+              <div
                 onClick={handleClick}
                 style={{
                   background: "none",
@@ -220,24 +228,17 @@ const CardProject: React.FC<CardProjectProps> = ({
 
                   <button></button>
                 </Card>
-              </button>
+              </div>
             </div>
-            <div
-              style={{
-                width: "50px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <i className="icon" ref={gitHubRef} style={{ margin: "20px" }}>
+            <div className="icon-holder">
+              <i className="icon" ref={gitHubRef}>
                 <GitHub
                   style={{ fill: "#2F4F4F" }}
                   className="icon-image"
                   fontSize="large"
                 />
               </i>
-              <i className="icon" ref={webRef} style={{ margin: "20px" }}>
+              <i className="icon" ref={webRef}>
                 <OndemandVideo
                   style={{ fill: "#76ADAD" }}
                   className="icon-image"
@@ -273,7 +274,6 @@ const CardProject: React.FC<CardProjectProps> = ({
                   {projectSummaryItems && projectSummaryItems.length > 0 ? (
                     <List>
                       {projectSummaryItems.map((sum, index) => {
-                        console.log("Summary Item:", sum); // Log the summary item
                         return (
                           <ListItem key={index}>
                             <ListItemText
