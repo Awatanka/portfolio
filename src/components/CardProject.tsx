@@ -270,12 +270,17 @@ const CardProject: React.FC<CardProjectProps> = ({
                 }}
               >
                 <Box style={{ fontSize: "10px", padding: 0 }}>
-                  <h2>{title}</h2>
+                  <Typography
+                    variant="h4"
+                    style={{ fontWeight: "700", color: "#248282" }}
+                  >
+                    {title}
+                  </Typography>
                   {projectSummaryItems && projectSummaryItems.length > 0 ? (
                     <List>
                       {projectSummaryItems.map((sum, index) => {
                         return (
-                          <ListItem key={index}>
+                          <ListItem key={index} style={{ padding: 0 }}>
                             <ListItemText
                               secondary={sum}
                               style={{ padding: 0 }}
@@ -289,7 +294,19 @@ const CardProject: React.FC<CardProjectProps> = ({
                     <Typography variant="body1">{cardBody}</Typography>
                   )}
                   {keyDetails && (
-                    <Typography variant="body1">{keyDetails}</Typography>
+                    <>
+                      <Typography
+                        style={{
+                          margin: 0,
+                          fontSize: "16px",
+                          color: "#011A1D",
+                          fontWeight: "700",
+                        }}
+                      >
+                        Key details:
+                      </Typography>
+                      <Typography variant="body1">{keyDetails}</Typography>
+                    </>
                   )}
                 </Box>
               </div>
