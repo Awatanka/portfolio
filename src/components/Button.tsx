@@ -28,7 +28,7 @@ const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
       textDecoration: "none",
       width: "200px",
       overflow: "hidden",
-      borderRadius: "40px",
+      borderRadius: "30px",
       transition: ".5s",
       "& span": {
         position: "relative",
@@ -89,7 +89,12 @@ const CreativeButton: React.FC<CreativeButtonProps> = ({ title }) => {
   return (
     <>
       <AnimatedButton whileHover="hover" whileTap="tap">
-        <a href="#">
+        <a
+          href="https://drive.google.com/file/d/1MPQSTFfDC6MQ3Fr9Zz7cV1IY_09IISSE/view?usp=sharing"
+          download="cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div
             style={{
               display: "flex",
@@ -100,7 +105,6 @@ const CreativeButton: React.FC<CreativeButtonProps> = ({ title }) => {
             <span>{title}</span>
             <CloudDownloadIcon fontSize="large" style={{ color: "white" }} />
           </div>
-
           <div className="waves"></div>
         </a>
       </AnimatedButton>

@@ -1,5 +1,3 @@
-import React from "react";
-import CardSection from "./CardSection";
 import { Box, Typography } from "@mui/material";
 import gymImage from "../assets/gym-photo2.png";
 import eaSportImage from "../assets/ea-sport.png";
@@ -17,11 +15,6 @@ const ProjectSection = () => {
     rootMargin: "-100px 0px",
   });
 
-  const textVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 2 } },
-  };
-
   const projects = [
     {
       title: "The Gym",
@@ -32,7 +25,6 @@ const ProjectSection = () => {
         "Enabled users to add new comments, which are stored on the back-end using the API.",
         "Utilized JavaScript DOM manipulation and the flexbox layout to dynamically generate and render concert data from a JavaScript array into the HTML content.",
         "Implemented comment like and delete functionality, allowing users to like comments through a ❤️ and delete buttons that triggers an API request and updates the DOM accordingly.",
-        "Implemented comment delete functionality, enabling users to remove comments through a delete button that interacts with the API and updates the DOM accordingly.",
       ],
       details: "3 sprints, personal project, 3 weeks",
     },
@@ -53,8 +45,11 @@ const ProjectSection = () => {
       description: "Tech Stack: HTML, CSS, Bootstrap",
       picBg: vanCity,
       summary: [
-        // Summary items for Vancity for U
+        "I developed the Vancouver Tourism Website using a combination of HTML5, CSS3, and JavaScript.",
+        "During the development process, I recognized the pivotal role this project played in my skill development journey. Although the project's professionalism may not have fully realized its potential, its unique concept and thoughtfully designed interface made it an invaluable learning experience.",
+        "Through careful design and development, I aimed to capture the essence of Vancouver and offer users a seamless and intuitive browsing experience.",
       ],
+      details: "the team of 3 developers, 2 weeks",
     },
     {
       title: "Rentsy",
@@ -88,14 +83,12 @@ const ProjectSection = () => {
     <>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <InView>
-          {" "}
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            {" "}
             <Typography
               variant="h4"
               style={{
@@ -114,7 +107,6 @@ const ProjectSection = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            {" "}
             <Typography
               style={{
                 padding: "20px 0",

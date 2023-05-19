@@ -11,6 +11,7 @@ const Footer: React.FC = (): ReactElement => {
       sx={{
         height: "auto",
         backgroundImage: `url(${WaveImage})`,
+        // background: "#B7BECF",
         backgroundSize: "105% 100%",
         paddingTop: "1rem",
         paddingBottom: "1rem",
@@ -25,7 +26,7 @@ const Footer: React.FC = (): ReactElement => {
               href="mailto:natalia.sokolova.ca@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#76ADAD", fontSize: 40 }}
+              style={{ color: "white" }}
             >
               <EmailIcon />
             </IconButton>
@@ -36,7 +37,7 @@ const Footer: React.FC = (): ReactElement => {
               href="https://www.linkedin.com/in/natalia-sokolova-/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#76ADAD", fontSize: 40 }}
+              style={{ color: "white", fontSize: 40 }}
             >
               <LinkedInIcon />
             </IconButton>
