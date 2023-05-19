@@ -9,7 +9,7 @@ import inStock from "../assets/inStock.png";
 import portfolio from "../assets/portfolio.png";
 import CardProject from "./CardProject";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { InView, useInView } from "react-intersection-observer";
 
 const ProjectSection = () => {
   const [ref, inView] = useInView({
@@ -32,6 +32,7 @@ const ProjectSection = () => {
         "Enabled users to add new comments, which are stored on the back-end using the API.",
         "Utilized JavaScript DOM manipulation and the flexbox layout to dynamically generate and render concert data from a JavaScript array into the HTML content.",
         "Implemented comment like and delete functionality, allowing users to like comments through a ❤️ and delete buttons that triggers an API request and updates the DOM accordingly.",
+        "Implemented comment delete functionality, enabling users to remove comments through a delete button that interacts with the API and updates the DOM accordingly.",
       ],
       details: "3 sprints, personal project, 3 weeks",
     },
@@ -85,65 +86,88 @@ const ProjectSection = () => {
 
   return (
     <>
-      <motion.div
-        ref={ref}
-        variants={textVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <InView>
+          {" "}
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1 }}
+          >
+            {" "}
+            <Typography
+              variant="h4"
+              style={{
+                padding: "20px",
+                borderLeft: "3px solid #A5B3C7",
+                margin: "20px 0",
+                color: "#013B41",
+              }}
+            >
+              Welcome to my projects section!
+            </Typography>
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1 }}
+          >
+            {" "}
+            <Typography
+              style={{
+                padding: "20px 0",
+                margin: "20px 0",
+                color: "#013B41",
+                fontSize: "18px",
+                lineHeight: "1.6",
+                textAlign: "justify",
+              }}
+            >
+              Here, you can explore some of my latest web development projects
+              that showcase my skills and passion for creating engaging and
+              user-friendly websites. From responsive designs to intuitive user
+              interfaces, each project is a reflection of my dedication to
+              delivering high-quality solutions that meet the needs of my
+              clients and their users. So, take a look around and get inspired
+              by the possibilities of what we can create together.
+            </Typography>
+          </motion.div>
+        </InView>
+      </Box>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+          gridAutoFlow: "row",
+          gap: "40px",
+          margin: "auto 0",
+        }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <Typography
-            variant="h4"
-            style={{
-              padding: "20px",
-              borderLeft: "3px solid #A5B3C7",
-              margin: "20px 0",
-              color: "#013B41",
-            }}
-          >
-            Welcome to my projects section!
-          </Typography>
-
-          <Typography
-            style={{
-              padding: "20px 0",
-              margin: "20px 0",
-              color: "#013B41",
-              fontSize: "18px",
-              lineHeight: "1.6",
-              textAlign: "justify",
-            }}
-          >
-            Here, you can explore some of my latest web development projects
-            that showcase my skills and passion for creating engaging and
-            user-friendly websites. From responsive designs to intuitive user
-            interfaces, each project is a reflection of my dedication to
-            delivering high-quality solutions that meet the needs of my clients
-            and their users. So, take a look around and get inspired by the
-            possibilities of what we can create together.
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
-            gridAutoFlow: "row",
-            gap: "40px",
-            margin: "auto 0",
-          }}
-        >
-          {projects.map((project, index) => (
-            <CardProject
-              key={index}
-              title={project.title}
-              description={project.description}
-              picBg={project.picBg}
-              projectSummaryItems={project.summary}
-              keyDetails={project.details}
-            />
-          ))}
-        </Box>
-      </motion.div>
+        {projects.map((project, index) => (
+          <div key={index} style={{ margin: "0 auto" }}>
+            <InView>
+              {({ ref, inView }) => (
+                <motion.div
+                  ref={ref}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 1 }}
+                >
+                  <CardProject
+                    title={project.title}
+                    description={project.description}
+                    picBg={project.picBg}
+                    projectSummaryItems={project.summary}
+                    keyDetails={project.details}
+                  />
+                </motion.div>
+              )}
+            </InView>
+          </div>
+        ))}
+      </Box>
     </>
   );
 };

@@ -11,7 +11,6 @@ const Footer: React.FC = (): ReactElement => {
       sx={{
         height: "auto",
         backgroundImage: `url(${WaveImage})`,
-
         backgroundSize: "105% 100%",
         paddingTop: "1rem",
         paddingBottom: "1rem",

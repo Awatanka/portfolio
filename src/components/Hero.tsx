@@ -1,10 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import CreativeButton from "./Button";
+
+const CV_PDF = require("../assets/cv.pdf").default;
 
 const HeroContainer = styled(Box)({
   position: "relative",
@@ -68,6 +70,11 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
       scale: 1,
       transition: { duration: 0.5, ease: "easeInOut" },
     },
+  };
+
+  const handleDownloadCV = () => {
+    window.open(CV_PDF, "_blank");
+    console.log("click");
   };
 
   return (
@@ -134,7 +141,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
               initial="initial"
               animate="animate"
             >
-              <CreativeButton title={"Send message"} />
+              <CreativeButton title={"CV"} onClick={handleDownloadCV} />
             </motion.div>
           </motion.div>
         </HeroContent>

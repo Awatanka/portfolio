@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Box, Typography, Button } from "@mui/material";
+import CreativeButton from "./Button";
 
 const AboutMe: React.FC = () => {
   return (
@@ -18,18 +19,18 @@ const AboutMe: React.FC = () => {
         borderRadius: "50px",
       }}
     >
-      <Typography variant="h4" style={{ padding: "10px 0" }}>
+      <Typography variant="h5" style={{ padding: "10px 0" }}>
         Let's Talk!
       </Typography>
       <Typography
         variant="body1"
         style={{ fontSize: "18px", textAlign: "center" }}
       >
-        I am a skilled Software Developer with a passion for creating innovative
-        solutions. I am always on the lookout for exciting projects or roles
-        that require my expertise. If you have an idea that you would like to
-        bring to life, let's work together and make it happen!
+        I am always on the lookout for exciting projects or roles that require
+        my expertise. If you have an idea that you would like to bring to life,
+        let's work together and make it happen!
       </Typography>
+
       <Button
         variant="contained"
         size="large"
