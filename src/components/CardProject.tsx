@@ -301,6 +301,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                           fontSize: "16px",
                           color: "#011A1D",
                           fontWeight: "700",
+                        
                         }}
                       >
                         Key details:

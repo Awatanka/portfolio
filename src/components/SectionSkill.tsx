@@ -18,7 +18,6 @@ export const SectionSkill: FC = (): ReactElement => {
       iconSrc:
         "https://icongr.am/devicon/html5-original.svg?size=128&color=currentColor",
     },
-
     {
       name: "Sass",
       iconSrc:
