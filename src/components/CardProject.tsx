@@ -81,7 +81,7 @@ const Card = styled("div")(({ theme }) => ({
     zIndex: "99",
     fontFamily: "Poppins, sans-serif",
     position: "absolute",
-    bottom: "-40px",
+    bottom: "-50px",
     left: "0",
     fontSize: "45px",
     padding: "5px 0",
@@ -301,7 +301,6 @@ const CardProject: React.FC<CardProjectProps> = ({
                           fontSize: "16px",
                           color: "#011A1D",
                           fontWeight: "700",
-                        
                         }}
                       >
                         Key details:

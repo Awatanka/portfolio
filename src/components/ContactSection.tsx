@@ -42,16 +42,18 @@ const AboutMe: React.FC = () => {
             require my expertise. If you have an idea that you would like to
             bring to life, let's work together and make it happen!{" "}
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            style={{
-              margin: "20px 0",
-              backgroundColor: "#ffd500",
-            }}
-          >
-            Send email
-          </Button>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              variant="contained"
+              size="large"
+              style={{
+                margin: "20px 0",
+                backgroundColor: "#ffd500",
+              }}
+            >
+              Send email
+            </Button>
+          </Box>
         </motion.div>
       </InView>
     </Box>

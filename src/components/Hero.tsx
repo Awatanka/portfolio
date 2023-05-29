@@ -1,18 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import CreativeButton from "./Button";
 
 const CV_PDF = require("../assets/cv.pdf").default;
 
-const HeroContainer = styled(Box)({
+const HeroContainer = styled("div")({
   position: "relative",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  width: "100vw",
   height: "100vh",
   backgroundImage: `url(${require("../assets/sea.jpg")})`,
   backgroundRepeat: "repeat",
@@ -20,25 +21,31 @@ const HeroContainer = styled(Box)({
   backgroundPosition: "center",
 });
 
-const HeroContent = styled(Box)({
+const HeroContent = styled("div")({
   position: "relative",
   textAlign: "center",
   zIndex: 1,
 });
 
-const HeroTitle = styled(Typography)({
+const HeroTitle = styled(Typography)(({ theme }) => ({
   color: "white",
   fontWeight: "bold",
   fontSize: "4rem",
   marginBottom: "1rem",
   textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
-});
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "2rem",
+  },
+}));
 
-const HeroSubtitle = styled(Typography)({
+const HeroSubtitle = styled(Typography)(({ theme }) => ({
   color: "white",
   fontSize: "26px",
   fontWeight: "300",
-});
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "1rem",
+  },
+}));
 
 type HeroProps = {
   title: string;

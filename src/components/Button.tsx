@@ -8,7 +8,7 @@ interface AnimatedButtonProps {
 }
 
 const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
-  ({ color }) => ({
+  ({ color, theme }) => ({
     border: "none",
     background: "none",
     margin: "20px",
@@ -21,6 +21,7 @@ const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
         transform: "translate(-50%, -75%) rotate(360deg)",
       },
     },
+
     "& a": {
       position: "relative",
       padding: "20px 50px",
@@ -30,6 +31,7 @@ const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
       overflow: "hidden",
       borderRadius: "30px",
       transition: ".5s",
+
       "& span": {
         position: "relative",
         color: "#fff" || color,
@@ -39,6 +41,7 @@ const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
         letterSpacing: "3px",
         zIndex: 99,
       },
+
       "& .waves": {
         position: "absolute",
         top: "-80px",
@@ -76,6 +79,21 @@ const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
 
     "&:hover a .waves": {
       top: "-120px",
+    },
+
+    [theme.breakpoints.down("sm")]: {
+      "& .waves": {
+        position: "absolute",
+        top: "-80px",
+        left: 0,
+        width: "150px",
+        height: "100px",
+        boxShadow: "inset 0 0 50px rgba(0, 0, 0, .5)",
+        transition: ".5s",
+      },
+      "& a": {
+        width: "150px",
+      },
     },
   })
 );
