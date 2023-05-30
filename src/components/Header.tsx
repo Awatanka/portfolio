@@ -19,7 +19,13 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Projects", "Contact", "Resume"];
+const navItems = [
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Projects", id: "projects" },
+  { label: "Contact", id: "contact" },
+  { label: "Resume", id: "resume" },
+];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -27,6 +33,14 @@ export default function DrawerAppBar(props: Props) {
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleNavigation = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      handleDrawerToggle(); // Close the drawer after navigation
+    }
   };
 
   const drawer = (
@@ -37,9 +51,12 @@ export default function DrawerAppBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={() => handleNavigation(item.id)}
+            >
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -83,8 +100,12 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
+              <Button
+                key={item.label}
+                sx={{ color: "#fff" }}
+                onClick={() => handleNavigation(item.id)}
+              >
+                {item.label}
               </Button>
             ))}
           </Box>

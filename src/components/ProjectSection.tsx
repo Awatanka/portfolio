@@ -57,7 +57,7 @@ const ProjectSection = () => {
         "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API",
       picBg: rentsy,
       summary: [
-        // Summary items for Rentsy
+        // Add later summary items for Rentsy
       ],
     },
     {
@@ -66,7 +66,7 @@ const ProjectSection = () => {
         "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, API",
       picBg: inStock,
       summary: [
-        // Summary items for InStock
+        // Add later summary items for InStock
       ],
     },
     {
@@ -74,7 +74,7 @@ const ProjectSection = () => {
       description: "Tech Stack: React, Sass, TypeScript, MUI, Framer Motion",
       picBg: portfolio,
       summary: [
-        // Summary items for Portfolio
+        // Add later summary items for Portfolio
       ],
     },
   ];

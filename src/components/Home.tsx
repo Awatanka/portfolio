@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
@@ -85,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
   };
 
   return (
-    <HeroContainer>
+    <HeroContainer id="home">
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}

@@ -4,8 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SectionSkill from "./components/SectionSkill";
 import ProjectSection from "./components/ProjectSection";
-import Hero from "./components/Hero";
-import AboutMe from "./components/AboutMe";
+import Home from "./components/Home";
+import About from "./components/About";
 import ContactSection from "./components/ContactSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
@@ -32,12 +32,12 @@ function App() {
   return (
     <>
       <Header />
-      <Hero
+      <Home
         title={"Nataliia Sokolova"}
         subtitle={" <web developer/> you are looking for."}
       />
       <Container maxWidth="lg">
-        <AboutMe />
+        <About />
         <ProjectSection />
         <SectionSkill />
         <ContactSection />

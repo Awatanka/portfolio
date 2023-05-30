@@ -11,7 +11,7 @@ const AboutMe: React.FC = () => {
   });
   return (
     <>
-      <Box sx={{ height: "100%" }}>
+      <Box sx={{ height: "100%" }} id="about">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
