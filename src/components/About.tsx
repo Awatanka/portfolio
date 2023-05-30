@@ -11,7 +11,7 @@ const AboutMe: React.FC = () => {
   });
   return (
     <>
-      <Box sx={{ height: "100%" }} id="about">
+      <Box sx={{ margineTop: "60px" }} id="about">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -26,7 +26,7 @@ const AboutMe: React.FC = () => {
           <Typography
             variant="h4"
             style={{
-              padding: "30px",
+              padding: "40px",
               borderLeft: "3px solid #A5B3C7",
               margin: "20px 0",
             }}

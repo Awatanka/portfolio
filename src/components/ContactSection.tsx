@@ -20,6 +20,7 @@ const AboutMe: React.FC = () => {
         padding: "0 30px",
         borderRadius: "50px",
       }}
+      id="contact"
     >
       <InView>
         <motion.div

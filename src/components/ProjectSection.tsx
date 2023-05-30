@@ -81,7 +81,7 @@ const ProjectSection = () => {
 
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box sx={{ display: "flex", flexDirection: "column" }} id="projects">
         <InView>
           <motion.div
             ref={ref}
@@ -92,7 +92,7 @@ const ProjectSection = () => {
             <Typography
               variant="h4"
               style={{
-                padding: "20px",
+                padding: "40px",
                 borderLeft: "3px solid #A5B3C7",
                 margin: "20px 0",
                 color: "#013B41",
