@@ -13,6 +13,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
 interface Props {
   window?: () => Window;
@@ -23,7 +26,6 @@ const navItems = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
   { label: "Projects", id: "projects" },
-  { label: "Contact", id: "contact" },
 ];
 
 export default function DrawerAppBar(props: Props) {
@@ -37,8 +39,8 @@ export default function DrawerAppBar(props: Props) {
   const handleNavigation = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      handleDrawerToggle(); // Close the drawer after navigation
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      handleDrawerToggle();
     }
   };
 
@@ -107,9 +109,37 @@ export default function DrawerAppBar(props: Props) {
                 {item.label}
               </Button>
             ))}
+            <IconButton
+              sx={{ color: "#fff" }}
+              href="https://www.linkedin.com/in/your-linkedin-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </IconButton>
+            <IconButton
+              sx={{ color: "#fff" }}
+              href="https://github.com/your-github-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <GitHubIcon />
+            </IconButton>
+            <IconButton
+              sx={{ color: "#fff" }}
+              href="/path-to-your-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Resume"
+            >
+              <PictureAsPdfIcon />
+            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
+
       <Box component="nav">
         <Drawer
           container={container}

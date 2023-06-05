@@ -1,12 +1,24 @@
 import { motion } from "framer-motion";
 import { InView, useInView } from "react-intersection-observer";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, TextField } from "@mui/material";
 
-const AboutMe: React.FC = () => {
+const ContactSection: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: "-100px 0px",
   });
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const email = formData.get("email") as string;
+    const name = formData.get("name") as string;
+    const message = formData.get("message") as string;
+    form.reset();
+    // Use the 'email', 'name', and 'message' variables as needed
+    console.log(email, name, message);
+  };
 
   return (
     <Box
@@ -41,19 +53,57 @@ const AboutMe: React.FC = () => {
           >
             I am always on the lookout for exciting projects or roles that
             require my expertise. If you have an idea that you would like to
-            bring to life, let's work together and make it happen!{" "}
+            bring to life, let's work together and make it happen!
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              variant="contained"
-              size="large"
-              style={{
-                margin: "20px 0",
-                backgroundColor: "#ffd500",
-              }}
+            <form
+              action="https://formsubmit.co/natalia.sokolova.ca@gmail.com"
+              method="POST"
+              onSubmit={handleSubmit}
             >
-              Send email
-            </Button>
+              <div className="form-group">
+                <div className="form-row">
+                  <div className="col">
+                    <TextField
+                      name="name"
+                      label="Full Name"
+                      className="form-control"
+                      required
+                    />
+                  </div>
+                  <div className="col">
+                    <TextField
+                      name="email"
+                      label="Email Address"
+                      className="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="form-group">
+                <TextField
+                  name="message"
+                  label="Your Message"
+                  className="form-control"
+                  multiline
+                  rows={10}
+                  required
+                />
+              </div>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                size="large"
+                style={{
+                  margin: "20px 0",
+                  backgroundColor: "#ffd500",
+                }}
+              >
+                Submit Form
+              </Button>
+            </form>
           </Box>
         </motion.div>
       </InView>
@@ -61,4 +111,4 @@ const AboutMe: React.FC = () => {
   );
 };
 
-export default AboutMe;
+export default ContactSection;
