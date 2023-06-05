@@ -116,7 +116,7 @@ export default function DrawerAppBar(props: Props) {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <LinkedInIcon />
+              <LinkedInIcon fontSize="large" />
             </IconButton>
             <IconButton
               sx={{ color: "#fff" }}

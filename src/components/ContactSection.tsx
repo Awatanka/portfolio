@@ -8,17 +8,6 @@ const ContactSection: React.FC = () => {
     rootMargin: "-100px 0px",
   });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const email = formData.get("email") as string;
-    const name = formData.get("name") as string;
-    const message = formData.get("message") as string;
-    form.reset();
-    console.log(email, name, message);
-  };
-
   return (
     <Box
       sx={{
@@ -56,35 +45,44 @@ const ContactSection: React.FC = () => {
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <form
+              target="_blank"
               action="https://formsubmit.co/natalia.sokolova.ca@gmail.com"
               method="POST"
-              onSubmit={handleSubmit}
             >
               <div className="form-group">
                 <div className="form-row">
                   <div className="col">
-                    <input name="name" className="form-control" required /> Full
-                    Name
+                    <input
+                      name="name"
+                      className="form-control"
+                      required
+                      style={{
+                        width: "400px",
+                        backgroundColor: "#f5f5f5",
+                        padding: "20px",
+                        borderRadius: "5px",
+                      }}
+                    />
                   </div>
                   <div className="col">
-                    <input name="email" className="form-control" required />{" "}
-                    Email
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      required
+                    />
                   </div>
                 </div>
               </div>
-              <div className="form-group">
-                <input name="message" className="form-control" required /> Your
-                message
+              <div>
+                <textarea name="message" placeholder="Your Message" />
               </div>
               <Button
                 type="submit"
                 variant="contained"
                 color="primary"
                 size="large"
-                style={{
-                  margin: "20px 0",
-                  backgroundColor: "#ffd500",
-                }}
+                sx={{ marginTop: "20px", backgroundColor: "#ffd500" }}
               >
                 Submit Form
               </Button>
