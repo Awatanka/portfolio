@@ -1,11 +1,10 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
-import CreativeButton from "./Button";
+import CreativeButton from "./CreativeButton";
 
-const CV_PDF = require("../assets/cv.pdf").default;
+import seaBackground from "../assets/sea.jpg";
 
 const HeroContainer = styled("div")({
   position: "relative",
@@ -14,7 +13,7 @@ const HeroContainer = styled("div")({
   alignItems: "center",
   width: "100vw",
   height: "100vh",
-  backgroundImage: `url(${require("../assets/sea.jpg")})`,
+  backgroundImage: `url(${seaBackground})`,
   backgroundRepeat: "repeat",
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -78,97 +77,94 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
     },
   };
 
-  const handleDownloadCV = () => {
-    window.open(CV_PDF, "_blank");
-    console.log("click");
-  };
+  // const handleDownloadCV = () => {
+  //   window.open(cvPdf, "_blank");
+  //   console.log("click");
+  // };
 
   return (
-    <>
-      {" "}
-      <HeroContainer id="home">
-        <motion.div
-          initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <HeroContent>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+    <HeroContainer id="home">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <HeroContent>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <HeroTitle
+              variant="h1"
+              style={{ fontFamily: "fantasy", letterSpacing: "5px" }}
             >
-              <HeroTitle
-                variant="h1"
-                style={{ fontFamily: "fantasy", letterSpacing: "5px" }}
-              >
-                {title}
-              </HeroTitle>
-            </motion.div>
+              {title}
+            </HeroTitle>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.8 }}
-              transition={{ duration: 1, delay: 1.5 }}
-            >
-              <HeroSubtitle variant="h2">
-                <motion.span
-                  key={currentWordIndex}
-                  initial={{
-                    opacity: 0,
-                    textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
-                  }}
-                  animate={{
-                    opacity: 1,
-                    textShadow: "0px 0px 5px rgba(255,255,255,0.9)",
-                  }}
-                  exit={{
-                    opacity: 0,
-                    textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    delay: 0.2,
-                    ease: "easeInOut",
-                    staggerChildren: 0.1,
-                  }}
-                  style={{ display: "inline-block", color: "#fff" }}
-                >
-                  {rotatingWords[currentWordIndex]}
-                </motion.span>
-                {subtitle}
-              </HeroSubtitle>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2 }}
-            >
-              <motion.div
-                variants={buttonVariants}
-                initial="initial"
-                animate="animate"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.8 }}
+            transition={{ duration: 1, delay: 1.5 }}
+          >
+            <HeroSubtitle variant="h2">
+              <motion.span
+                key={currentWordIndex}
+                initial={{
+                  opacity: 0,
+                  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
+                }}
+                animate={{
+                  opacity: 1,
+                  textShadow: "0px 0px 5px rgba(255,255,255,0.9)",
+                }}
+                exit={{
+                  opacity: 0,
+                  textShadow: "0px 0px 0px rgba(255,255,255,0.9)",
+                }}
+                transition={{
+                  duration: 1.5,
+                  delay: 0.2,
+                  ease: "easeInOut",
+                  staggerChildren: 0.1,
+                }}
+                style={{ display: "inline-block", color: "#fff" }}
               >
-                <CreativeButton title={"CV"} onClick={handleDownloadCV} />
-              </motion.div>
+                {rotatingWords[currentWordIndex]}
+              </motion.span>
+              {subtitle}
+            </HeroSubtitle>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 2 }}
+          >
+            <motion.div
+              variants={buttonVariants}
+              initial="initial"
+              animate="animate"
+            >
+              <CreativeButton title={"CV"} />
             </motion.div>
-          </HeroContent>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ duration: 1, delay: 2 }}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(55, 55, 55, 0.6)",
-          }}
-        />
-      </HeroContainer>
-    </>
+          </motion.div>
+        </HeroContent>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ duration: 1, delay: 2 }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(55, 55, 55, 0.6)",
+        }}
+      />
+    </HeroContainer>
   );
 };
 

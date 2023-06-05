@@ -108,7 +108,7 @@ const CreativeButton: React.FC<CreativeButtonProps> = ({ title }) => {
     <>
       <AnimatedButton whileHover="hover" whileTap="tap">
         <a
-          href="https://drive.google.com/file/d/1MPQSTFfDC6MQ3Fr9Zz7cV1IY_09IISSE/view?usp=sharing"
+          href="https://drive.google.com/file/d/1D1ACMjRYZSucH95KXaPDc55OImokbSaV/view?usp=sharing"
           download="cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
