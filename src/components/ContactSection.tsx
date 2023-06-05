@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { InView, useInView } from "react-intersection-observer";
-import { Box, Typography, Button, TextField } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 
 const ContactSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -64,32 +64,18 @@ const ContactSection: React.FC = () => {
               <div className="form-group">
                 <div className="form-row">
                   <div className="col">
-                    <TextField
-                      name="name"
-                      label="Full Name"
-                      className="form-control"
-                      required
-                    />
+                    <input name="name" className="form-control" required /> Full
+                    Name
                   </div>
                   <div className="col">
-                    <TextField
-                      name="email"
-                      label="Email Address"
-                      className="form-control"
-                      required
-                    />
+                    <input name="email" className="form-control" required />{" "}
+                    Email
                   </div>
                 </div>
               </div>
               <div className="form-group">
-                <TextField
-                  name="message"
-                  label="Your Message"
-                  className="form-control"
-                  multiline
-                  rows={10}
-                  required
-                />
+                <input name="message" className="form-control" required /> Your
+                message
               </div>
               <Button
                 type="submit"

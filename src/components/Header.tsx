@@ -111,7 +111,7 @@ export default function DrawerAppBar(props: Props) {
             ))}
             <IconButton
               sx={{ color: "#fff" }}
-              href="https://www.linkedin.com/in/your-linkedin-profile"
+              href="https://www.linkedin.com/in/natalia-sokolova-/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -120,7 +120,7 @@ export default function DrawerAppBar(props: Props) {
             </IconButton>
             <IconButton
               sx={{ color: "#fff" }}
-              href="https://github.com/your-github-profile"
+              href="https://github.com/Awatanka"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -129,7 +129,7 @@ export default function DrawerAppBar(props: Props) {
             </IconButton>
             <IconButton
               sx={{ color: "#fff" }}
-              href="/path-to-your-resume.pdf"
+              href="https://drive.google.com/file/d/1D1ACMjRYZSucH95KXaPDc55OImokbSaV/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Resume"
