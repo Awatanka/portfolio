@@ -16,7 +16,6 @@ const ContactSection: React.FC = () => {
     const name = formData.get("name") as string;
     const message = formData.get("message") as string;
     form.reset();
-    // Use the 'email', 'name', and 'message' variables as needed
     console.log(email, name, message);
   };
 
