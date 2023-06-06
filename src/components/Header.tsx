@@ -15,7 +15,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
 interface Props {
   window?: () => Window;
@@ -25,21 +24,35 @@ const drawerWidth = 240;
 const navItems = [
   { label: "Home", id: "home" },
   { label: "Projects", id: "projects" },
+  { label: "Resume", id: "resume" },
 ];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [activeItem, setActiveItem] = React.useState("Home");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const handleNavigation = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      handleDrawerToggle();
+  const handleNavigation = (id: string, label: string) => {
+    setActiveItem(label);
+    if (id === "resume") {
+      const resumeLink = document.createElement("a");
+      resumeLink.href =
+        "https://drive.google.com/file/d/1MPQSTFfDC6MQ3Fr9Zz7cV1IY_09IISSE/view?usp=sharing";
+      resumeLink.target = "_blank";
+      resumeLink.style.display = "none";
+      document.body.appendChild(resumeLink);
+      resumeLink.click();
+      document.body.removeChild(resumeLink);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        handleDrawerToggle();
+      }
     }
   };
 
@@ -54,7 +67,8 @@ export default function DrawerAppBar(props: Props) {
           <ListItem key={item.label} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
-              onClick={() => handleNavigation(item.id)}
+              onClick={() => handleNavigation(item.id, item.label)}
+              selected={activeItem === item.label}
             >
               <ListItemText primary={item.label} />
             </ListItemButton>
@@ -102,8 +116,17 @@ export default function DrawerAppBar(props: Props) {
             {navItems.map((item) => (
               <Button
                 key={item.label}
-                sx={{ color: "#fff" }}
-                onClick={() => handleNavigation(item.id)}
+                sx={{
+                  color: "#fff",
+                  "&:hover": {
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    color: "#fff",
+                  },
+                  ...(activeItem === item.label && {
+                    textDecoration: "underline",
+                  }),
+                }}
+                onClick={() => handleNavigation(item.id, item.label)}
               >
                 {item.label}
               </Button>
@@ -124,16 +147,7 @@ export default function DrawerAppBar(props: Props) {
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <GitHubIcon />
-            </IconButton>
-            <IconButton
-              sx={{ color: "#fff" }}
-              href="https://drive.google.com/file/d/1D1ACMjRYZSucH95KXaPDc55OImokbSaV/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Resume"
-            >
-              <PictureAsPdfIcon />
+              <GitHubIcon fontSize="large" />
             </IconButton>
           </Box>
         </Toolbar>
