@@ -66,6 +66,9 @@ const Container = styled("div")(({ theme }) => ({
     flexDirection: "column",
     boxShadow: theme.shadows[2],
   },
+  "&:hover": {
+    transform: "scale(1.05)",
+  },
 }));
 
 const Card = styled("div")(({ theme }) => ({

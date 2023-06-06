@@ -6,7 +6,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { styled } from "@mui/material/styles";
 
 const FooterContainer = styled(Box)(({ theme }) => ({
-  background: "#D3D7DF",
+  background: "rgb(211, 215, 223, 0.4)",
   color: theme.palette.primary.contrastText,
   padding: "2rem 0",
 }));
@@ -52,7 +52,11 @@ const Footer: React.FC = (): ReactElement => {
         </Grid>
         <Grid container justifyContent="center" alignItems="center">
           <Grid item>
-            <Typography variant="body2" align="center">
+            <Typography
+              variant="body2"
+              align="center"
+              style={{ color: "#013B41" }}
+            >
               &copy; {new Date().getFullYear()} Nataliia Sokolova. All rights
               reserved.
             </Typography>

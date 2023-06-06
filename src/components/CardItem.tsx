@@ -32,6 +32,8 @@ const CardBody = styled("div")({
   borderRadius: "10px",
   "&:hover": {
     height: "360px",
+
+    transform: "scale(1.1)",
   },
 });
 
