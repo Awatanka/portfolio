@@ -122,7 +122,6 @@ const ContactSection: React.FC = () => {
                 marginBottom: "35px",
               }}
             >
-              {" "}
               <Button
                 type="submit"
                 variant="contained"

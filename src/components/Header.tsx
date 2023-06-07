@@ -14,8 +14,11 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import icon from "../assets/icon.png";
+import shell from "../assets/boat.png";
 
 const drawerWidth = 240;
 const navItems = [
@@ -48,6 +51,9 @@ export default function DrawerAppBar({ window }: Props) {
       resumeLink.click();
       document.body.removeChild(resumeLink);
     } else {
+      if (mobileOpen) {
+        setMobileOpen(false);
+      }
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -56,19 +62,52 @@ export default function DrawerAppBar({ window }: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Nataliia Sokolova
-      </Typography>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", height: "100%", overflow: "auto" }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "20px 0",
+        }}
+      >
+        <Typography variant="h6" sx={{ my: 2, marginLeft: "10px" }}>
+          Menu
+        </Typography>
+        <ArrowForwardIcon />
+      </Box>
+
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.label} disablePadding>
+          <ListItem
+            key={item.label}
+            disablePadding
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "10px 0",
+              ...(activeItem !== item.label && {
+                paddingLeft: "50px",
+              }),
+            }}
+          >
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={{ textAlign: "left", width: "100%" }}
               onClick={() => handleNavigation(item.id, item.label)}
               selected={activeItem === item.label}
             >
+              {activeItem === item.label && (
+                <img
+                  src={icon}
+                  alt="Active Icon"
+                  style={{ width: "32px", margin: "10px" }}
+                />
+              )}
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
@@ -110,25 +149,45 @@ export default function DrawerAppBar({ window }: Props) {
           >
             Nataliia Sokolova
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                sm: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+            }}
+          >
             {navItems.map((item) => (
-              <Button
-                key={item.label}
-                sx={{
-                  color: "#fff",
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+              <>
+                {activeItem === item.label && (
+                  <img
+                    src={shell}
+                    alt="Active Icon"
+                    style={{ width: "32px" }}
+                  />
+                )}
+                <Button
+                  key={item.label}
+                  sx={{
                     color: "#fff",
-                  },
-                  ...(activeItem === item.label && {
-                    borderBottom: "2px solid white",
-                    borderRadius: "0",
-                  }),
-                }}
-                onClick={() => handleNavigation(item.id, item.label)}
-              >
-                {item.label}
-              </Button>
+                    margin: "0 10px",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      color: "#fff",
+                    },
+                    ...(activeItem === item.label && {
+                      borderRadius: "0",
+                      borderBottom: "1px solid white",
+                      padding: "20px 0",
+                    }),
+                  }}
+                  onClick={() => handleNavigation(item.id, item.label)}
+                >
+                  {item.label}
+                </Button>
+              </>
             ))}
             <IconButton
               sx={{ color: "#fff" }}
