@@ -133,7 +133,7 @@ export default function DrawerAppBar({ window }: Props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </IconButton>
           <Typography
             variant="h6"
