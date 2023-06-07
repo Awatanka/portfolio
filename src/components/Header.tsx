@@ -83,7 +83,6 @@ export default function DrawerAppBar(props: Props) {
 
   return (
     <Box sx={{ display: "flex", background: "#013B41" }}>
-      <CssBaseline />
       <AppBar
         component="nav"
         style={{ background: "#013B41", height: "80px", padding: "10px 40px" }}
@@ -123,7 +122,8 @@ export default function DrawerAppBar(props: Props) {
                     color: "#fff",
                   },
                   ...(activeItem === item.label && {
-                    textDecoration: "underline",
+                    borderBottom: "2px solid white",
+                    borderRadius: "0",
                   }),
                 }}
                 onClick={() => handleNavigation(item.id, item.label)}
@@ -171,6 +171,24 @@ export default function DrawerAppBar(props: Props) {
           }}
         >
           {drawer}
+          <IconButton
+            sx={{ color: "#013B41" }}
+            href="https://www.linkedin.com/in/natalia-sokolova-/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            sx={{ color: "#013B41" }}
+            href="https://github.com/Awatanka"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <GitHubIcon fontSize="large" />
+          </IconButton>
         </Drawer>
       </Box>
     </Box>

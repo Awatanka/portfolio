@@ -95,10 +95,9 @@ export const SectionSkill: FC = (): ReactElement => {
       <Typography
         variant="h4"
         style={{
-          padding: "20px",
+          padding: "40px",
           borderLeft: "3px solid #A5B3C7",
           margin: "20px 0",
-          color: "#013B41",
         }}
       >
         Skills
@@ -129,6 +128,7 @@ export const SectionSkill: FC = (): ReactElement => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                padding: "20px 0",
               }}
             >
               <Box sx={{ ...boxStyles }}>

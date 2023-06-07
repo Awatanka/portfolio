@@ -68,6 +68,8 @@ const Container = styled("div")(({ theme }) => ({
   },
   "&:hover": {
     transform: "scale(1.05)",
+    boxShadow: "0 0 15px #C0D1D6",
+    borderRadius: "10px",
   },
 }));
 

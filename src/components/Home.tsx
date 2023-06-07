@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
+import { CssBaseline, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import CreativeButton from "./CreativeButton";
@@ -77,13 +77,9 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
     },
   };
 
-  // const handleDownloadCV = () => {
-  //   window.open(cvPdf, "_blank");
-  //   console.log("click");
-  // };
-
   return (
     <HeroContainer id="home">
+      <CssBaseline />
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}

@@ -12,7 +12,7 @@ import { InView, useInView } from "react-intersection-observer";
 const ProjectSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-100px 0px",
+    rootMargin: "-150px 0px",
   });
 
   const projects = [
@@ -131,10 +131,11 @@ const ProjectSection = () => {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(400px, 2fr))",
           gridAutoFlow: "row",
-          gap: "40px",
+          gap: "50px",
           margin: "auto 0",
+          padding: "20px 0",
         }}
       >
         {projects.map((project, index) => (
