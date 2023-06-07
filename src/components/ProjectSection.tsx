@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import gymImage from "../assets/gym-photo2.png";
 import eaSportImage from "../assets/ea-sport.png";
 import vanCity from "../assets/vancity.png";
-import rentsy from "../assets/rentsy.png";
+import rentsy from "../assets/Rentsy.png";
 import inStock from "../assets/inStock.png";
 import portfolio from "../assets/portfolio.png";
 import CardProject from "./CardProject";
@@ -27,6 +27,18 @@ const ProjectSection = () => {
         "Implemented comment like and delete functionality, allowing users to like comments through a ❤️ and delete buttons that triggers an API request and updates the DOM accordingly.",
       ],
       details: "3 sprints, personal project, 3 weeks",
+    },
+    {
+      title: "rhi.zone",
+      description: "Tech Stack: React, MUI, Node, Jest, Docker, MySQL, Express",
+      picBg: eaSportImage,
+      summary: [
+        "Participated in a cross-functional hackathon in partnership with Electronic Arts, where I contributed to a winning project that was recognized as the top solution out of 25 teams.",
+        "Demonstrated strong communication and teamwork skills, collaborating effectively with a team of 3 developers and 3 UX designers.",
+        "Developed a working prototype of the EA SharePlay feature within a 24-hour timeframe.",
+      ],
+      details:
+        "the team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     },
     {
       title: "EA SharePlay",
