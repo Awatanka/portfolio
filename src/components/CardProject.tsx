@@ -236,20 +236,20 @@ const CardProject: React.FC<CardProjectProps> = ({
               </div>
             </div>
             <div className="icon-holder">
-              <i className="icon" ref={gitHubRef}>
+              <a className="icon" href={gitHubRef}>
                 <GitHub
                   style={{ fill: "#2F4F4F" }}
                   className="icon-image"
                   fontSize="large"
                 />
-              </i>
-              <i className="icon" ref={webRef}>
+              </a>
+              <a className="icon" href={webRef}>
                 <OndemandVideo
                   style={{ fill: "#76ADAD" }}
                   className="icon-image"
                   fontSize="large"
                 />
-              </i>
+              </a>
             </div>
           </div>
 

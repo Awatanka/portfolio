@@ -1,23 +1,21 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import { useState } from "react";
+import {
+  AppBar,
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-
-interface Props {
-  window?: () => Window;
-}
 
 const drawerWidth = 240;
 const navItems = [
@@ -26,10 +24,13 @@ const navItems = [
   { label: "Resume", id: "resume" },
 ];
 
-export default function DrawerAppBar(props: Props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState("Home");
+interface Props {
+  window?: () => Window;
+}
+
+export default function DrawerAppBar({ window }: Props) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("Home");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);

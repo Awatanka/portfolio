@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header window={undefined} />
       <Home
         title={"Nataliia Sokolova"}
         subtitle={" <web developer/> you are looking for."}
