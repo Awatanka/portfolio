@@ -18,7 +18,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import icon from "../assets/icon.png";
-import shell from "../assets/boat.png";
+import boat from "../assets/boat.png";
 
 const drawerWidth = 240;
 const navItems = [
@@ -56,7 +56,7 @@ export default function DrawerAppBar({ window }: Props) {
       }
       const element = document.getElementById(id);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: "smooth", inline: "nearest" });
       }
     }
   };
@@ -74,10 +74,10 @@ export default function DrawerAppBar({ window }: Props) {
           margin: "20px 0",
         }}
       >
-        <Typography variant="h6" sx={{ my: 2, marginLeft: "10px" }}>
+        <Typography variant="h6" sx={{ my: 2 }}>
           Menu
         </Typography>
-        <ArrowForwardIcon />
+        <ArrowForwardIcon style={{ marginLeft: "5px" }} />
       </Box>
 
       <Divider />
@@ -162,11 +162,7 @@ export default function DrawerAppBar({ window }: Props) {
             {navItems.map((item) => (
               <>
                 {activeItem === item.label && (
-                  <img
-                    src={shell}
-                    alt="Active Icon"
-                    style={{ width: "32px" }}
-                  />
+                  <img src={boat} alt="Active Icon" style={{ width: "32px" }} />
                 )}
                 <Button
                   key={item.label}
@@ -189,6 +185,7 @@ export default function DrawerAppBar({ window }: Props) {
                 </Button>
               </>
             ))}
+
             <IconButton
               sx={{ color: "#fff" }}
               href="https://www.linkedin.com/in/natalia-sokolova-/"
@@ -229,24 +226,32 @@ export default function DrawerAppBar({ window }: Props) {
           }}
         >
           {drawer}
-          <IconButton
-            sx={{ color: "#013B41" }}
-            href="https://www.linkedin.com/in/natalia-sokolova-/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            <LinkedInIcon fontSize="large" />
-          </IconButton>
-          <IconButton
-            sx={{ color: "#013B41" }}
-            href="https://github.com/Awatanka"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <GitHubIcon fontSize="large" />
-          </IconButton>
+            <IconButton
+              sx={{ color: "#1#4B6B9" }}
+              href="https://www.linkedin.com/in/natalia-sokolova-/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon fontSize="large" />
+            </IconButton>
+            <IconButton
+              sx={{ color: "##14B6B9" }}
+              href="https://github.com/Awatanka"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <GitHubIcon fontSize="large" />
+            </IconButton>
+          </Box>
         </Drawer>
       </Box>
     </Box>
