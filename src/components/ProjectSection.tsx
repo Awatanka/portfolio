@@ -107,62 +107,58 @@ const ProjectSection = () => {
 
   return (
     <>
-      <Box sx={{ margineTop: "60px" }} id="projects">
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <InView>
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1 }}
-            >
-              <Typography
-                variant="h4"
-                style={{
-                  padding: "40px",
-                  borderLeft: "3px solid #A5B3C7",
-                  margin: "20px 0",
-                  color: "#013B41",
-                }}
-              >
-                Welcome to my projects section!
-              </Typography>
-            </motion.div>
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 1 }}
-            >
-              <Typography
-                style={{
-                  padding: "20px 0",
-                  margin: "20px 0",
-                  color: "#013B41",
-                  fontSize: "18px",
-                  lineHeight: "1.6",
-                  textAlign: "justify",
-                }}
-              >
-                Here, you can explore some of my latest web development projects
-                that showcase my skills and passion for creating engaging and
-                user-friendly websites. From responsive designs to intuitive
-                user interfaces, each project is a reflection of my dedication
-                to delivering high-quality solutions that meet the needs of my
-                clients and their users. So, take a look around and get inspired
-                by the possibilities of what we can create together.
-              </Typography>
-            </motion.div>
-          </InView>
-        </Box>
+      <Box sx={{ marginTop: "60px" }} id="projects">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+        >
+          <Typography
+            variant="h4"
+            style={{
+              padding: "40px",
+              borderLeft: "3px solid #A5B3C7",
+              margin: "20px 0",
+              color: "#013B41",
+            }}
+          >
+            Welcome to my projects section!
+          </Typography>
+        </motion.div>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+        >
+          <Typography
+            style={{
+              padding: "20px 0",
+              margin: "20px 0",
+              color: "#013B41",
+              fontSize: "18px",
+              lineHeight: "1.6",
+              textAlign: "justify",
+            }}
+          >
+            Here, you can explore some of my latest web development projects
+            that showcase my skills and passion for creating engaging and
+            user-friendly websites. From responsive designs to intuitive user
+            interfaces, each project is a reflection of my dedication to
+            delivering high-quality solutions that meet the needs of my clients
+            and their users. So, take a look around and get inspired by the
+            possibilities of what we can create together.
+          </Typography>
+        </motion.div>
+
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 2fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(500px, 2fr))",
             gridAutoFlow: "row",
             gap: "50px",
             margin: "auto 0",
-            padding: "20px 0",
           }}
         >
           {projects.map((project, index) => (

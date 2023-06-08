@@ -79,12 +79,11 @@ export default function DrawerAppBar({ window }: Props) {
         </Typography>
         <ArrowForwardIcon style={{ marginLeft: "5px" }} />
       </Box>
-
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem
-            key={item.label}
+            key={item.id}
             disablePadding
             style={{
               display: "flex",
@@ -161,11 +160,8 @@ export default function DrawerAppBar({ window }: Props) {
           >
             {navItems.map((item) => (
               <>
-                {activeItem === item.label && (
-                  <img src={boat} alt="Active Icon" style={{ width: "32px" }} />
-                )}
                 <Button
-                  key={item.label}
+                  key={item.id}
                   sx={{
                     color: "#fff",
                     margin: "0 10px",
@@ -183,6 +179,9 @@ export default function DrawerAppBar({ window }: Props) {
                 >
                   {item.label}
                 </Button>
+                {activeItem === item.label && (
+                  <img src={boat} alt="Active Icon" style={{ width: "32px" }} />
+                )}
               </>
             ))}
 

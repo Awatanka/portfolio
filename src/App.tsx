@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { Container } from "@mui/material";
+import {
+  Container,
+  CssBaseline,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SectionSkill from "./components/SectionSkill";
@@ -29,21 +34,31 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const defaultTheme = createTheme();
+
   return (
     <>
-      <Header window={undefined} />
-      <Home
-        title={"Nataliia Sokolova"}
-        subtitle={" <web developer/> you are looking for."}
-      />
-      <Container maxWidth="lg">
-        <About />
-        <ProjectSection />
-        <SectionSkill />
-        <ContactSection />
-      </Container>
-      {showScrollButton && <ScrollToTopButton />}
-      <Footer />
+      <ThemeProvider theme={defaultTheme}>
+        <CssBaseline />
+        <Header window={undefined} />
+        <main>
+          {" "}
+          <Home
+            title={"Nataliia Sokolova"}
+            subtitle={" <web developer/> you are looking for."}
+          />
+          <Container maxWidth="lg">
+            {" "}
+            <About />
+            <ProjectSection />
+            <SectionSkill />
+            <ContactSection />
+            {showScrollButton && <ScrollToTopButton />}
+          </Container>
+        </main>
+
+        <Footer />
+      </ThemeProvider>
     </>
   );
 }
