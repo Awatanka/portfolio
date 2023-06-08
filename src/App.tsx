@@ -42,13 +42,11 @@ function App() {
         <CssBaseline />
         <Header window={undefined} />
         <main>
-          {" "}
           <Home
             title={"Nataliia Sokolova"}
             subtitle={" <web developer/> you are looking for."}
           />
           <Container maxWidth="lg">
-            {" "}
             <About />
             <ProjectSection />
             <SectionSkill />

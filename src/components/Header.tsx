@@ -84,15 +84,12 @@ export default function DrawerAppBar({ window }: Props) {
         {navItems.map((item) => (
           <ListItem
             key={item.id}
-            disablePadding
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: "10px 0",
-              ...(activeItem !== item.label && {
-                paddingLeft: "50px",
-              }),
+              paddingTop: "10px",
+              paddingBottom: "10px",
             }}
           >
             <ListItemButton
@@ -159,9 +156,8 @@ export default function DrawerAppBar({ window }: Props) {
             }}
           >
             {navItems.map((item) => (
-              <>
+              <div key={item.id}>
                 <Button
-                  key={item.id}
                   sx={{
                     color: "#fff",
                     margin: "0 10px",
@@ -182,7 +178,7 @@ export default function DrawerAppBar({ window }: Props) {
                 {activeItem === item.label && (
                   <img src={boat} alt="Active Icon" style={{ width: "32px" }} />
                 )}
-              </>
+              </div>
             ))}
 
             <IconButton

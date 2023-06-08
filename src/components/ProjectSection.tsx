@@ -1,4 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Theme,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import CardProject from "./CardProject";
 import { motion } from "framer-motion";
 import { InView, useInView } from "react-intersection-observer";
@@ -102,8 +108,12 @@ const projects = [
 const ProjectSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-150px 0px",
+    rootMargin: "-180px 0px",
   });
+
+  const isLargeScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.up("lg")
+  );
 
   return (
     <>
@@ -151,40 +161,43 @@ const ProjectSection = () => {
             possibilities of what we can create together.
           </Typography>
         </motion.div>
-
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(500px, 2fr))",
-            gridAutoFlow: "row",
-            gap: "50px",
-            margin: "auto 0",
-          }}
-        >
-          {projects.map((project, index) => (
-            <div key={index} style={{ margin: "0 auto" }}>
-              <InView>
-                {({ ref, inView }) => (
-                  <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 1 }}
-                  >
-                    <CardProject
-                      title={project.title}
-                      description={project.description}
-                      picBg={project.picBg}
-                      projectSummaryItems={project.summary}
-                      keyDetails={project.details}
-                      gitHubRef={project.git}
-                    />
-                  </motion.div>
-                )}
-              </InView>
-            </div>
-          ))}
-        </Box>
+        <Container style={{ margin: "0 auto" }}>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: isLargeScreen
+                ? "repeat(auto-fit, minmax(500px, 2fr))"
+                : undefined,
+              gridAutoFlow: "row",
+              gap: "50px",
+              margin: "auto 0",
+            }}
+          >
+            {projects.map((project, index) => (
+              <div key={index} style={{ margin: "0 auto" }}>
+                <InView>
+                  {({ ref, inView }) => (
+                    <motion.div
+                      ref={ref}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={inView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 1 }}
+                    >
+                      <CardProject
+                        title={project.title}
+                        description={project.description}
+                        picBg={project.picBg}
+                        projectSummaryItems={project.summary}
+                        keyDetails={project.details}
+                        gitHubRef={project.git}
+                      />
+                    </motion.div>
+                  )}
+                </InView>
+              </div>
+            ))}
+          </Box>
+        </Container>
       </Box>
     </>
   );

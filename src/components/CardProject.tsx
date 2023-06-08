@@ -1,6 +1,13 @@
 import { ArrowForward, GitHub, OndemandVideo } from "@mui/icons-material";
-import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import { Theme, styled } from "@mui/material/styles";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
@@ -154,7 +161,7 @@ const Card = styled("div")(({ theme }) => ({
       zIndex: "99",
       fontFamily: "Poppins, sans-serif",
       position: "absolute",
-      bottom: "-10px",
+      bottom: "-26px",
       left: "0",
       fontSize: "25px",
       fontWeight: "700",
@@ -163,8 +170,9 @@ const Card = styled("div")(({ theme }) => ({
     },
     "& .pic": {
       zIndex: "100",
-      height: "140px",
-      backgroundSize: "105% 100%",
+      width: "250px",
+      backgroundSize: "100%",
+      backgroundRepeat: "no-repeat",
       filter: "grayscale(100%)",
     },
   },
@@ -195,6 +203,10 @@ const CardProject: React.FC<CardProjectProps> = ({
     setIsFlipped(!isFlipped);
   };
 
+  const isSmallScreen = useMediaQuery<Theme>((theme) =>
+    theme.breakpoints.down("sm")
+  );
+  const iconFontSize = isSmallScreen ? "medium" : "large";
   return (
     <>
       <ReactCardFlip
@@ -240,14 +252,14 @@ const CardProject: React.FC<CardProjectProps> = ({
                 <GitHub
                   style={{ fill: "#2F4F4F" }}
                   className="icon-image"
-                  fontSize="large"
+                  fontSize={iconFontSize}
                 />
               </a>
               <a className="icon" href={webRef}>
                 <OndemandVideo
                   style={{ fill: "#76ADAD" }}
                   className="icon-image"
-                  fontSize="large"
+                  fontSize={iconFontSize}
                 />
               </a>
             </div>
