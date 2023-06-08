@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { InView, useInView } from "react-intersection-observer";
-import { Box, Typography, Button, TextField, styled } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  TextField,
+  styled,
+  useMediaQuery,
+  Theme,
+} from "@mui/material";
 
 const ContactSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -9,7 +17,7 @@ const ContactSection: React.FC = () => {
   });
 
   const CssTextField = styled(TextField)({
-    width: "100%",
+    width: "70%",
     "& label.Mui-focused": {
       color: "#A0AAB4",
     },
@@ -28,6 +36,10 @@ const ContactSection: React.FC = () => {
       },
     },
   });
+
+  const isLargeScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.up("lg")
+  );
 
   return (
     <Box
@@ -78,7 +90,10 @@ const ContactSection: React.FC = () => {
           <Box
             component="form"
             sx={{
-              "& .MuiTextField-root": { m: 2, width: "45ch" },
+              "& .MuiTextField-root": {
+                m: 2,
+                width: isLargeScreen ? "55ch" : "25ch",
+              },
               margin: "0 auto",
             }}
             action="https://formsubmit.co/natalia.sokolova.ca@gmail.com"
