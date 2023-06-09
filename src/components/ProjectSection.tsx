@@ -57,29 +57,31 @@ const projects = [
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
-    title: "Vancity for U",
-    description: "Tech Stack: HTML, CSS, Bootstrap",
-    picBg: vanCity,
-    summary: [
-      "I developed the Vancouver Tourism Website using a combination of HTML5, CSS3, and JavaScript.",
-      "During the development process, I recognized the pivotal role this project played in my skill development journey. Although the project's professionalism may not have fully realized its potential, its unique concept and thoughtfully designed interface made it an invaluable learning experience.",
-      "Through careful design and development, I aimed to capture the essence of Vancouver and offer users a seamless and intuitive browsing experience.",
-    ],
-    details: "Team of 3 developers, 2 weeks",
-    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
-  },
-  {
     title: "Rentsy",
     description:
       "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API",
     picBg: rentsy,
     summary: [
-      // Add later summary items for Rentsy
+      "Rentsy is a website for rental house hunting that provides additional information to save you time and effort during your search. It offers details such as nearby dog parks and crime rates.",
+      "This full-stack application was built using public APIs and Google APIs to enhance the user experience and provide comprehensive data for making informed rental decisions.",
     ],
     details:
       "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
+  {
+    title: "Vancity for U",
+    description: "Tech Stack: HTML, CSS, Bootstrap",
+    picBg: vanCity,
+    summary: [
+      "I developed the Vancouver Tourism Website using a combination of HTML5, CSS3, and JavaScript.",
+      "During the development process, I recognized the pivotal role this project played in my skill development journey. Its unique concept and thoughtfully designed interface made it an invaluable learning experience.",
+      "Through careful design and development, I aimed to capture the essence of Vancouver and offer users a seamless and intuitive browsing experience.",
+    ],
+    details: "Team of 3 developers, my first project, 2 weeks",
+    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+  },
+
   {
     title: "InStock",
     description:
@@ -97,10 +99,9 @@ const projects = [
     description: "Tech Stack: React, Sass, TypeScript, MUI, Framer Motion",
     picBg: portfolio,
     summary: [
-      // Add later summary items for Portfolio
+      "I've carefully crafted this portfolio to impress and inspire. Whether you're a fellow developer seeking collaboration or an employer looking for top talent, my website reflects my dedication to excellence and my commitment to delivering exceptional results.",
     ],
-    details:
-      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
+    details: "Personal design, 2 weeks",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
 ];

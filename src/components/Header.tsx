@@ -156,7 +156,13 @@ export default function DrawerAppBar({ window }: Props) {
             }}
           >
             {navItems.map((item) => (
-              <div key={item.id}>
+              <div
+                key={item.id}
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                {activeItem === item.label && (
+                  <img src={boat} alt="Active Icon" style={{ width: "32px" }} />
+                )}
                 <Button
                   sx={{
                     color: "#fff",
@@ -167,17 +173,16 @@ export default function DrawerAppBar({ window }: Props) {
                     },
                     ...(activeItem === item.label && {
                       borderRadius: "0",
-                      borderBottom: "1px solid white",
-                      padding: "20px 0",
+                      // borderBottom: "2px solid #C0D1D6",
+                      borderBottom: "2px solid #ffd500",
+
+                      padding: "24px 0",
                     }),
                   }}
                   onClick={() => handleNavigation(item.id, item.label)}
                 >
                   {item.label}
                 </Button>
-                {activeItem === item.label && (
-                  <img src={boat} alt="Active Icon" style={{ width: "32px" }} />
-                )}
               </div>
             ))}
 

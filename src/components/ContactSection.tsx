@@ -42,20 +42,8 @@ const ContactSection: React.FC = () => {
   );
 
   return (
-    <Box
-      sx={{
-        margin: "0 auto",
-        width: "90vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        padding: "0 30px",
-        borderRadius: "50px",
-      }}
-      id="contact"
-    >
-      <InView as="div" style={{ width: "90vw", padding: "0 10px" }}>
+    <Box id="contact">
+      <InView as="div">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
