@@ -23,9 +23,9 @@ const projects = [
     picBg: gymImage,
     summary: [
       "Implemented features to retrieve comment data from an API and display it on the webpage.",
-      "Enabled users to add new comments, which are stored on the back-end using the API.",
+      "Enabled users to add new comments, which are stored on the backend using the API.",
       "Utilized JavaScript DOM manipulation and the flexbox layout to dynamically generate and render concert data from a JavaScript array into the HTML content.",
-      "Implemented comment like and delete functionality, allowing users to like comments through a ❤️ and delete buttons that triggers an API request and updates the DOM accordingly.",
+      "Implemented comment like and delete functionality, allowing users to like comments through a ❤️ and delete buttons that trigger an API request and update the DOM accordingly.",
     ],
     details: "3 sprints, personal project, 3 weeks",
     git: "https://github.com/Awatanka/sport_club",
@@ -40,7 +40,7 @@ const projects = [
       "Developed a working prototype of the EA SharePlay feature within a 24-hour timeframe.",
     ],
     details:
-      "the team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
+      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
@@ -53,7 +53,7 @@ const projects = [
       "Developed a working prototype of the EA SharePlay feature within a 24-hour timeframe.",
     ],
     details:
-      "the team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
+      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
@@ -65,7 +65,7 @@ const projects = [
       "During the development process, I recognized the pivotal role this project played in my skill development journey. Although the project's professionalism may not have fully realized its potential, its unique concept and thoughtfully designed interface made it an invaluable learning experience.",
       "Through careful design and development, I aimed to capture the essence of Vancouver and offer users a seamless and intuitive browsing experience.",
     ],
-    details: "the team of 3 developers, 2 weeks",
+    details: "Team of 3 developers, 2 weeks",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
@@ -77,7 +77,7 @@ const projects = [
       // Add later summary items for Rentsy
     ],
     details:
-      "the team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
+      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
@@ -89,7 +89,7 @@ const projects = [
       // Add later summary items for InStock
     ],
     details:
-      "the team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
+      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
@@ -100,7 +100,7 @@ const projects = [
       // Add later summary items for Portfolio
     ],
     details:
-      "the team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
+      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
 ];
@@ -167,7 +167,7 @@ const ProjectSection = () => {
               display: "grid",
               gridTemplateColumns: isLargeScreen
                 ? "repeat(auto-fit, minmax(500px, 2fr))"
-                : undefined,
+                : null,
               gridAutoFlow: "row",
               gap: "50px",
               margin: "auto 0",
@@ -183,14 +183,24 @@ const ProjectSection = () => {
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 1 }}
                     >
-                      <CardProject
-                        title={project.title}
-                        description={project.description}
-                        picBg={project.picBg}
-                        projectSummaryItems={project.summary}
-                        keyDetails={project.details}
-                        gitHubRef={project.git}
-                      />
+                      {isLargeScreen ? (
+                        <CardProject
+                          title={project.title}
+                          description={project.description}
+                          picBg={project.picBg}
+                          projectSummaryItems={project.summary}
+                          keyDetails={project.details}
+                          gitHubRef={project.git}
+                        />
+                      ) : (
+                        <CardProject
+                          title={project.title}
+                          description={project.description}
+                          picBg={project.picBg}
+                          keyDetails={project.details}
+                          gitHubRef={project.git}
+                        />
+                      )}
                     </motion.div>
                   )}
                 </InView>

@@ -62,16 +62,32 @@ const Container = styled("div")(({ theme }) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    margine: "0 auto",
+    margin: "0 auto",
   },
   [theme.breakpoints.down("sm")]: {
     width: "275px",
-    height: "225px",
+    height: "255px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
     boxShadow: theme.shadows[2],
+    "& p": {
+      color: "#333",
+      opacity: "0.7",
+      fontSize: "10px",
+      letterSpacing: "1px",
+      margin: "5px 20px",
+      transition: "all 0.2s ease",
+    },
+    "& .icon-holder": {
+      width: "50px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "left",
+      justifyContent: "center",
+      margin: "0 auto",
+    },
   },
   "&:hover": {
     transform: "scale(1.05)",
@@ -155,22 +171,22 @@ const Card = styled("div")(({ theme }) => ({
     transform: " scale(1)",
   },
   [theme.breakpoints.down("sm")]: {
-    width: "225px",
+    width: "235px",
     height: "185px",
     "& h2": {
       zIndex: "99",
       fontFamily: "Poppins, sans-serif",
       position: "absolute",
       bottom: "-26px",
-      left: "0",
-      fontSize: "25px",
+      left: "30px",
+      fontSize: "20px",
       fontWeight: "700",
       color: "#248282",
       pointerEvents: "none",
     },
     "& .pic": {
       zIndex: "100",
-      width: "250px",
+      width: "240px",
       backgroundSize: "100%",
       backgroundRepeat: "no-repeat",
       filter: "grayscale(100%)",
@@ -206,7 +222,13 @@ const CardProject: React.FC<CardProjectProps> = ({
   const isSmallScreen = useMediaQuery<Theme>((theme) =>
     theme.breakpoints.down("sm")
   );
+
+  const isMediumScreen = useMediaQuery<Theme>((theme) =>
+    theme.breakpoints.between("sm", "lg")
+  );
+
   const iconFontSize = isSmallScreen ? "medium" : "large";
+
   return (
     <>
       <ReactCardFlip
@@ -216,16 +238,22 @@ const CardProject: React.FC<CardProjectProps> = ({
       >
         <Container className="container">
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <div style={{ width: "100%" }}>
+            <div>
               <div
                 onClick={handleClick}
                 style={{
                   background: "none",
                   border: "none",
                   cursor: "pointer",
+                  width: "80%",
                 }}
               >
-                <Card className="card">
+                <Card
+                  className="card"
+                  style={{
+                    width: "100%",
+                  }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -242,28 +270,45 @@ const CardProject: React.FC<CardProjectProps> = ({
                     className="pic"
                     style={{ backgroundImage: `url(${picBg})` }}
                   ></div>
-
                   <button></button>
                 </Card>
               </div>
             </div>
-            <div className="icon-holder">
-              <a className="icon" href={gitHubRef}>
-                <GitHub
-                  style={{ fill: "#2F4F4F" }}
-                  className="icon-image"
-                  fontSize={iconFontSize}
-                />
-              </a>
-              <a className="icon" href={webRef}>
-                <OndemandVideo
-                  style={{ fill: "#76ADAD" }}
-                  className="icon-image"
-                  fontSize={iconFontSize}
-                />
-              </a>
-            </div>
+            {!isSmallScreen && (
+              <div className="icon-holder" style={{ width: "20%" }}>
+                <a className="icon" href={gitHubRef}>
+                  <GitHub
+                    style={{ fill: "#2F4F4F" }}
+                    className="icon-image"
+                    fontSize={iconFontSize}
+                  />
+                </a>
+                <a className="icon" href={webRef}>
+                  <OndemandVideo
+                    style={{ fill: "#76ADAD" }}
+                    className="icon-image"
+                    fontSize={iconFontSize}
+                  />
+                </a>
+              </div>
+            )}
           </div>
+
+          {!isSmallScreen && isMediumScreen && (
+            <div className="summary">
+              {projectSummaryItems && projectSummaryItems.length > 0 ? (
+                <List>
+                  {projectSummaryItems.map((sum, index) => {
+                    return (
+                      <ListItem key={index} style={{ padding: 0 }}>
+                        <ListItemText secondary={sum} style={{ padding: 0 }} />
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              ) : null}
+            </div>
+          )}
 
           <div className="stack">
             <p>{description}</p>
@@ -293,7 +338,9 @@ const CardProject: React.FC<CardProjectProps> = ({
                   >
                     {title}
                   </Typography>
-                  {projectSummaryItems && projectSummaryItems.length > 0 ? (
+                  {projectSummaryItems &&
+                  projectSummaryItems.length > 0 &&
+                  (!isSmallScreen || !isMediumScreen) ? (
                     <List>
                       {projectSummaryItems.map((sum, index) => {
                         return (
@@ -329,6 +376,32 @@ const CardProject: React.FC<CardProjectProps> = ({
               </div>
             </CardFlipped>
           </button>
+          {isSmallScreen && (
+            <div
+              className="icon-holder"
+              style={{
+                width: "100%",
+                marginTop: "16px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <a className="icon" href={gitHubRef}>
+                <GitHub
+                  style={{ fill: "#2F4F4F" }}
+                  className="icon-image"
+                  fontSize={iconFontSize}
+                />
+              </a>
+              <a className="icon" href={webRef}>
+                <OndemandVideo
+                  style={{ fill: "#76ADAD" }}
+                  className="icon-image"
+                  fontSize={iconFontSize}
+                />
+              </a>
+            </div>
+          )}
         </Container>
       </ReactCardFlip>
     </>
