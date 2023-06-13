@@ -35,12 +35,11 @@ const projects = [
     description: "Tech Stack: React, MUI, Node, Jest, Docker, MySQL, Express",
     picBg: rhizone,
     summary: [
-      "Participated in a cross-functional hackathon in partnership with Electronic Arts, where I contributed to a winning project that was recognized as the top solution out of 25 teams.",
-      "Demonstrated strong communication and teamwork skills, collaborating effectively with a team of 3 developers and 3 UX designers.",
-      "Developed a working prototype of the EA SharePlay feature within a 24-hour timeframe.",
+      "Created a prototype and launched a new feature, that was developed, tested and launched in 2 months, for the education management system with a team of 8 developers using the Scrum methodology.",
+      "Collaborated on APIs and managed software workflow using  Scrum methodology, increasing task success rate by 25%, wrote unit tests to detect bugs by increasing the over 35% efficiency rate.",
     ],
     details:
-      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
+      "Team of 10 developers, 2 months, from product specification to 1 working prototype of feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
