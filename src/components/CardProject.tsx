@@ -191,6 +191,24 @@ const Card = styled("div")(({ theme }) => ({
       backgroundRepeat: "no-repeat",
       filter: "grayscale(100%)",
     },
+    "&:hover": {
+      transform: "none",
+      boxShadow: "none",
+      borderRadius: "0",
+    },
+    "&:hover button": {
+      transform: "none",
+    },
+    "&:hover p": {
+      color: "black",
+    },
+    "&:hover .pic": {
+      filter: "grayscale(0)",
+    },
+    "&:hover i": {
+      opacity: 1,
+      transform: "none",
+    },
   },
 }));
 
@@ -227,7 +245,7 @@ const CardProject: React.FC<CardProjectProps> = ({
     theme.breakpoints.between("sm", "lg")
   );
 
-  const iconFontSize = isSmallScreen ? "medium" : "large";
+  // const iconFontSize = isSmallScreen ? "large" : "large";
 
   return (
     <>
@@ -280,14 +298,14 @@ const CardProject: React.FC<CardProjectProps> = ({
                   <GitHub
                     style={{ fill: "#2F4F4F" }}
                     className="icon-image"
-                    fontSize={iconFontSize}
+                    fontSize="large"
                   />
                 </a>
                 <a className="icon" href={webRef}>
                   <OndemandVideo
                     style={{ fill: "#76ADAD" }}
                     className="icon-image"
-                    fontSize={iconFontSize}
+                    fontSize="large"
                   />
                 </a>
               </div>
@@ -384,20 +402,21 @@ const CardProject: React.FC<CardProjectProps> = ({
                 marginTop: "16px",
                 display: "flex",
                 justifyContent: "center",
+                flexDirection: "row",
               }}
             >
               <a className="icon" href={gitHubRef}>
                 <GitHub
                   style={{ fill: "#2F4F4F" }}
                   className="icon-image"
-                  fontSize={iconFontSize}
+                  fontSize="large"
                 />
               </a>
-              <a className="icon" href={webRef}>
+              <a className="icon" href={webRef} style={{ padding: "10px" }}>
                 <OndemandVideo
                   style={{ fill: "#76ADAD" }}
                   className="icon-image"
-                  fontSize={iconFontSize}
+                  fontSize="large"
                 />
               </a>
             </div>
