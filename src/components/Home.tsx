@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import { motion } from "framer-motion";
+import { Typography, useMediaQuery } from "@mui/material";
+import { Theme, styled } from "@mui/material/styles";
+import { motion, Variants } from "framer-motion";
 import CreativeButton from "./CreativeButton";
 
 import seaBackground from "../assets/sea.jpg";
@@ -70,13 +70,18 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
     return () => clearInterval(interval);
   }, []);
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     initial: { scale: 0 },
     animate: {
       scale: 1,
       transition: { duration: 0.5, ease: "easeInOut" },
     },
+    smallScreen: { scale: 1 },
   };
+
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
 
   return (
     <>
@@ -139,9 +144,9 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
               transition={{ duration: 1, delay: 2 }}
             >
               <motion.div
-                variants={buttonVariants}
+                variants={isSmallScreen ? undefined : buttonVariants}
                 initial="initial"
-                animate="animate"
+                animate={isSmallScreen ? "smallScreen" : "animate"}
               >
                 <CreativeButton title={"CV"} />
               </motion.div>
