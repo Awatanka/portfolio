@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import img from "../assets/sea.jpg";
 
 const Portfolio: React.FC = () => {
   return (
@@ -15,7 +16,9 @@ const Portfolio: React.FC = () => {
           property="og:description"
           content="Check out Nataliia Sokolova's web developer portfolio."
         />
-        <meta property="og:image" content="https://sokolova.ca/-og-image.jpg" />
+        {/* <meta property="og:image" content="https://sokolova.ca/-og-image.jpg" /> */}
+        <meta property="og:image" content={img} />
+
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
