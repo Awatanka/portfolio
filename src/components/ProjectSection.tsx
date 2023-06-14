@@ -29,10 +29,12 @@ const projects = [
     ],
     details: "3 sprints, personal project, 3 weeks",
     git: "https://github.com/Awatanka/sport_club",
+    web: "https://awatanka.github.io/sport_club/index.html",
   },
   {
     title: "rhi.zone",
-    description: "Tech Stack: React, MUI, Node, Jest, Docker, MySQL, Express",
+    description:
+      "Tech Stack: React, TypeScript, MUI, Node, Jest, Docker, MySQL, Express",
     picBg: rhizone,
     summary: [
       "Created a prototype and launched a new feature, that was developed, tested and launched in 2 months, for the education management system with a team of 8 developers using the Scrum methodology.",
@@ -41,10 +43,11 @@ const projects = [
     details:
       "Team of 8 developers, 3 sprints, 2 months, from product specification to 1 working prototype of feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+    web: "https://rhi.zone/",
   },
   {
     title: "EA SharePlay",
-    description: "Tech Stack: HTML, Sass, React",
+    description: "Tech Stack: HTML, Sass, React, JavaScript",
     picBg: eaSportImage,
     summary: [
       "Participated in a cross-functional hackathon in partnership with Electronic Arts, where I contributed to a winning project that was recognized as the top solution out of 25 teams.",
@@ -54,11 +57,12 @@ const projects = [
     details:
       "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+    web: "https://ea-share-play.netlify.app/games/fifa",
   },
   {
     title: "Rentsy",
     description:
-      "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API",
+      "Tech Stack: React, JavaScript, Sass, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API",
     picBg: rentsy,
     summary: [
       "Rentsy is a website for rental house hunting that provides additional information to save you time and effort during your search. It offers details such as nearby dog parks and crime rates.",
@@ -78,7 +82,7 @@ const projects = [
       "Through careful design and development, I aimed to capture the essence of Vancouver and offer users a seamless and intuitive browsing experience.",
     ],
     details: "Team of 3 developers, my first project, 2 weeks",
-    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+    git: "https://github.com/Awatanka/TechWoman",
   },
 
   {
@@ -90,7 +94,7 @@ const projects = [
       "Instock is an Agile project aimed at developing a comprehensive Inventory Management System. The project utilizes a modern front-end built with React and SCSS, which provides a seamless user experience. The front-end communicates with a resilient Express and Node.js back-end. The MySQL database serves as the primary data source, and interaction with the database is facilitated through the use of knex.js.",
     ],
     details:
-      "Team of 3 developers, 1 week, 1 sprent, 1 working full stack aplication",
+      "Team of 3 developers, 1 week, 1 sprint, 1 working full stack aplication",
     git: "https://github.com/Awatanka/instock-duncan",
   },
   {
@@ -101,7 +105,7 @@ const projects = [
       "I've carefully crafted this portfolio to impress and inspire. Whether you're a fellow developer seeking collaboration or an employer looking for top talent, my website reflects my dedication to excellence and my commitment to delivering exceptional results.",
     ],
     details: "Personal design, 2 weeks",
-    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+    git: "https://github.com/Awatanka/portfolio",
   },
 ];
 
@@ -199,6 +203,7 @@ const ProjectSection = () => {
                           picBg={project.picBg}
                           keyDetails={project.details}
                           gitHubRef={project.git}
+                          webRef={project.web}
                         />
                       )}
                     </motion.div>
