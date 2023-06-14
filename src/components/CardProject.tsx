@@ -292,14 +292,24 @@ const CardProject: React.FC<CardProjectProps> = ({
             </div>
             {!isSmallScreen && (
               <div className="icon-holder" style={{ width: "20%" }}>
-                <a className="icon" href={gitHubRef}>
+                <a
+                  className="icon"
+                  href={gitHubRef}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   <GitHub
                     style={{ fill: "#2F4F4F" }}
                     className="icon-image"
                     fontSize="large"
                   />
                 </a>
-                <a className="icon" href={webRef}>
+                <a
+                  className="icon"
+                  href={webRef}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   <OndemandVideo
                     style={{ fill: "#76ADAD" }}
                     className="icon-image"

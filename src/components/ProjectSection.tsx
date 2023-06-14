@@ -198,6 +198,7 @@ const ProjectSection = () => {
                           projectSummaryItems={project.summary}
                           keyDetails={project.details}
                           gitHubRef={project.git}
+                          webRef={project.web}
                         />
                       ) : (
                         <CardProject

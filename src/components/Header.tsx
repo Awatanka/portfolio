@@ -20,7 +20,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import icon from "../assets/icon.png";
 import boat from "../assets/boat.png";
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 const navItems = [
   { label: "Home", id: "home" },
   { label: "Projects", id: "projects" },
@@ -44,7 +44,7 @@ export default function DrawerAppBar({ window }: Props) {
     if (id === "resume") {
       const resumeLink = document.createElement("a");
       resumeLink.href =
-        "https://drive.google.com/file/d/1MPQSTFfDC6MQ3Fr9Zz7cV1IY_09IISSE/view?usp=sharing";
+        "https://drive.google.com/file/d/1LEz-3hwZUNC4PLHOwV6w6phsQRA-o_Ow/view?usp=sharing";
       resumeLink.target = "_blank";
       resumeLink.style.display = "none";
       document.body.appendChild(resumeLink);
@@ -64,7 +64,11 @@ export default function DrawerAppBar({ window }: Props) {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center", height: "100%", overflow: "auto" }}
+      sx={{
+        textAlign: "center",
+        height: "100%",
+        overflow: "auto",
+      }}
     >
       <Box
         sx={{
