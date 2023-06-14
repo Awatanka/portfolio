@@ -71,6 +71,7 @@ const projects = [
     details:
       "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+    web: "https://drive.google.com/drive/search?q=rentsy",
   },
   {
     title: "Vancity for U",
@@ -83,6 +84,7 @@ const projects = [
     ],
     details: "Team of 3 developers, my first project, 2 weeks",
     git: "https://github.com/Awatanka/TechWoman",
+    web: "https://awatanka.github.io/TechWoman/",
   },
 
   {
@@ -96,6 +98,7 @@ const projects = [
     details:
       "Team of 3 developers, 1 week, 1 sprint, 1 working full stack aplication",
     git: "https://github.com/Awatanka/instock-duncan",
+    web: "",
   },
   {
     title: "Portfolio",
@@ -106,6 +109,7 @@ const projects = [
     ],
     details: "Personal design, 2 weeks",
     git: "https://github.com/Awatanka/portfolio",
+    web: "https://sokolova.ca/",
   },
 ];
 

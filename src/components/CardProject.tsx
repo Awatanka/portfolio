@@ -245,8 +245,6 @@ const CardProject: React.FC<CardProjectProps> = ({
     theme.breakpoints.between("sm", "lg")
   );
 
-  // const iconFontSize = isSmallScreen ? "large" : "large";
-
   return (
     <>
       <ReactCardFlip

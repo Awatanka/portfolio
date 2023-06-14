@@ -174,7 +174,6 @@ export default function DrawerAppBar({ window }: Props) {
                     ...(activeItem === item.label && {
                       borderRadius: "0",
                       borderBottom: "2px solid #ffd500",
-
                       padding: "24px 0",
                     }),
                   }}
