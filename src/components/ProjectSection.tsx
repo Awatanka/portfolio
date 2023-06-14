@@ -19,7 +19,7 @@ import portfolio from "../assets/portfolio.png";
 const projects = [
   {
     title: "The Gym",
-    description: "Tech Stack: HTML, Sass, JavaScript, API",
+    description: "Tech Stack: HTML, Sass, JavaScript, Public API",
     picBg: gymImage,
     summary: [
       "Implemented features to retrieve comment data from an API and display it on the webpage.",
@@ -39,7 +39,7 @@ const projects = [
       "Collaborated on APIs and managed software workflow using  Scrum methodology, increasing task success rate by 25%, wrote unit tests to detect bugs by increasing the over 35% efficiency rate.",
     ],
     details:
-      "Team of 10 developers, 2 months, from product specification to 1 working prototype of feature",
+      "Team of 8 developers, 3 sprints, 2 months, from product specification to 1 working prototype of feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
@@ -87,11 +87,11 @@ const projects = [
       "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, API",
     picBg: inStock,
     summary: [
-      // Add later summary items for InStock
+      "Instock is an Agile project aimed at developing a comprehensive Inventory Management System. The project utilizes a modern front-end built with React and SCSS, which provides a seamless user experience. The front-end communicates with a resilient Express and Node.js back-end. The MySQL database serves as the primary data source, and interaction with the database is facilitated through the use of knex.js.",
     ],
     details:
-      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
-    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+      "Team of 3 developers, 1 week, 1 sprent, 1 working full stack aplication",
+    git: "https://github.com/Awatanka/instock-duncan",
   },
   {
     title: "Portfolio",

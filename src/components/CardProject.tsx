@@ -393,34 +393,46 @@ const CardProject: React.FC<CardProjectProps> = ({
                 </Box>
               </div>
             </CardFlipped>
+            {isSmallScreen && (
+              <div
+                className="icon-holder"
+                style={{
+                  width: "100%",
+                  marginTop: "16px",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "row",
+                }}
+              >
+                <a
+                  className="icon"
+                  href={gitHubRef}
+                  style={{ margin: "0 20px" }}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <GitHub
+                    style={{ fill: "#2F4F4F" }}
+                    className="icon-image"
+                    fontSize="large"
+                  />
+                </a>
+                <a
+                  className="icon"
+                  href={webRef}
+                  style={{ margin: "0 20px" }}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <OndemandVideo
+                    style={{ fill: "#76ADAD" }}
+                    className="icon-image"
+                    fontSize="large"
+                  />
+                </a>
+              </div>
+            )}
           </button>
-          {isSmallScreen && (
-            <div
-              className="icon-holder"
-              style={{
-                width: "100%",
-                marginTop: "16px",
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "row",
-              }}
-            >
-              <a className="icon" href={gitHubRef}>
-                <GitHub
-                  style={{ fill: "#2F4F4F" }}
-                  className="icon-image"
-                  fontSize="large"
-                />
-              </a>
-              <a className="icon" href={webRef} style={{ padding: "10px" }}>
-                <OndemandVideo
-                  style={{ fill: "#76ADAD" }}
-                  className="icon-image"
-                  fontSize="large"
-                />
-              </a>
-            </div>
-          )}
         </Container>
       </ReactCardFlip>
     </>

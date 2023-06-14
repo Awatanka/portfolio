@@ -143,13 +143,15 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 2 }}
             >
-              {!isSmallScreen && (
+              {isSmallScreen ? (
+                <CreativeButton title={"CV"} isAnimated={false} />
+              ) : (
                 <motion.div
                   variants={buttonVariants}
                   initial="initial"
-                  animate={isSmallScreen ? "smallScreen" : "animate"}
+                  animate="animate"
                 >
-                  <CreativeButton title={"CV"} />
+                  <CreativeButton title={"CV"} isAnimated={true} />
                 </motion.div>
               )}
             </motion.div>

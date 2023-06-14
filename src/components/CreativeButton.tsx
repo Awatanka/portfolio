@@ -48,7 +48,6 @@ const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
         left: 0,
         width: "200px",
         height: "200px",
-        // background: color || "#025C67",
         boxShadow: "inset 0 0 50px rgba(0, 0, 0, .5)",
         transition: ".5s",
       },
@@ -101,9 +100,13 @@ const AnimatedButton = styled(motion.button)<AnimatedButtonProps>(
 interface CreativeButtonProps {
   title: string;
   onClick?: () => void;
+  isAnimated?: boolean;
 }
 
-const CreativeButton: React.FC<CreativeButtonProps> = ({ title }) => {
+const CreativeButton: React.FC<CreativeButtonProps> = ({
+  title,
+  isAnimated,
+}) => {
   return (
     <>
       <AnimatedButton whileHover="hover" whileTap="tap">
@@ -123,7 +126,7 @@ const CreativeButton: React.FC<CreativeButtonProps> = ({ title }) => {
             <span>{title}</span>
             <CloudDownloadIcon fontSize="large" style={{ color: "white" }} />
           </div>
-          <div className="waves"></div>
+          {isAnimated ? <div className="waves"></div> : null}
         </a>
       </AnimatedButton>
     </>
