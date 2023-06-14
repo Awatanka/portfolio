@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   CssBaseline,
@@ -13,7 +13,6 @@ import Home from "./components/Home";
 import About from "./components/About";
 import ContactSection from "./components/ContactSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-
 import { Helmet } from "react-helmet";
 
 function App() {
@@ -39,43 +38,40 @@ function App() {
   const defaultTheme = createTheme();
 
   return (
-    <>
-      <ThemeProvider theme={defaultTheme}>
-        <Helmet>
-          <title>Nataliia Sokolova - Web Developer Portfolio</title>
-          <meta
-            name="description"
-            content="Welcome to my web developer portfolio!"
-          />
-          <meta property="og:title" content="Nataliia Sokolova's Portfolio" />
-          <meta
-            property="og:description"
-            content="Check out Nataliia Sokolova's web developer portfolio."
-          />
-          {/* <meta
-            property="og:image"
-            content="https://sokolova.ca/-og-image.jpg"
-          /> */}
-        </Helmet>
-        <CssBaseline />
-        <Header window={undefined} />
-        <main>
-          <Home
-            title={"Nataliia Sokolova"}
-            subtitle={" <web developer/> you are looking for."}
-          />
-          <Container maxWidth="lg">
-            <About />
-            <ProjectSection />
-            <SectionSkill />
-            <ContactSection />
-            {showScrollButton && <ScrollToTopButton />}
-          </Container>
-        </main>
-
-        <Footer />
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <Helmet>
+        <title>Nataliia Sokolova - Web Developer Portfolio</title>
+        <meta
+          name="description"
+          content="Welcome to my web developer portfolio!"
+        />
+        <meta property="og:title" content="Nataliia Sokolova's Portfolio" />
+        <meta
+          property="og:description"
+          content="Check out Nataliia Sokolova's web developer portfolio."
+        />
+        <meta property="og:image" content="https://sokolova.ca/-og-image.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </Helmet>
+      <Header window={undefined} />
+      <main>
+        <Home
+          title={"Nataliia Sokolova"}
+          subtitle={"<web developer/> you are looking for."}
+        />
+        <Container maxWidth="lg">
+          <About />
+          <ProjectSection />
+          <SectionSkill />
+          <ContactSection />
+          {showScrollButton && <ScrollToTopButton />}
+        </Container>
+      </main>
+      <Footer />
+    </ThemeProvider>
   );
 }
 
