@@ -37,11 +37,11 @@ const projects = [
       "Tech Stack: React, TypeScript, MUI, Node, Jest, Docker, MySQL, Express",
     picBg: rhizone,
     summary: [
-      "Created a prototype and launched a new feature, that was developed, tested and launched in 2 months, for the education management system with a team of 8 developers using the Scrum methodology.",
-      "Collaborated on APIs and managed software workflow using  Scrum methodology, increasing task success rate by 25%, wrote unit tests to detect bugs by increasing the over 35% efficiency rate.",
+      "Created a prototype and launched a new feature that was developed, tested, and launched in 2 months for the education management system with a team of 8 developers using the Scrum methodology.",
+      "Collaborated on APIs and managed software workflow using the Scrum methodology, increasing task success rate by 25%. Wrote unit tests to detect bugs, increasing the efficiency rate by over 35%.",
     ],
     details:
-      "Team of 8 developers, 3 sprints, 2 months, from product specification to 1 working prototype of feature",
+      "Team of 8 developers, 3 sprints, 2 months, from product specification to 1 working prototype of the feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
     web: "https://rhi.zone/",
   },
@@ -69,8 +69,8 @@ const projects = [
       "This full-stack application was built using public APIs and Google APIs to enhance the user experience and provide comprehensive data for making informed rental decisions.",
     ],
     details:
-      "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
-    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+      "Personal project, full-stack web application within a limited timeframe of 10 days",
+    git: "https://github.com/Awatanka/rentsy-client",
     web: "https://drive.google.com/drive/search?q=rentsy",
   },
   {
@@ -86,19 +86,18 @@ const projects = [
     git: "https://github.com/Awatanka/TechWoman",
     web: "https://awatanka.github.io/TechWoman/",
   },
-
   {
     title: "InStock",
     description:
       "Tech Stack: React, Sass, JavaScript, Node.js, Express.js, Knex.js, API",
     picBg: inStock,
     summary: [
-      "Instock is an Agile project aimed at developing a comprehensive Inventory Management System. The project utilizes a modern front-end built with React and SCSS, which provides a seamless user experience. The front-end communicates with a resilient Express and Node.js back-end. The MySQL database serves as the primary data source, and interaction with the database is facilitated through the use of knex.js.",
+      "InStock is an Agile project aimed at developing a comprehensive Inventory Management System. The project utilizes a modern front-end built with React and SCSS, which provides a seamless user experience. The front-end communicates with a resilient Express and Node.js back-end. The MySQL database serves as the primary data source, and interaction with the database is facilitated through the use of knex.js.",
     ],
     details:
-      "Team of 3 developers, 1 week, 1 sprint, 1 working full stack aplication",
+      "Team of 3 developers, 1 week, 1 sprint, 1 working full-stack application",
     git: "https://github.com/Awatanka/instock-duncan",
-    web: "",
+    web: "https://github.com/Awatanka/instock-duncan",
   },
   {
     title: "Portfolio",
