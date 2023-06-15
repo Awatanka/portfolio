@@ -14,6 +14,8 @@ import About from "./components/About";
 import ContactSection from "./components/ContactSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import Portfolio from "./components/Portfolio";
+import { Helmet } from "react-helmet";
+import img from "./assets/sea.jpg";
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -39,9 +41,25 @@ function App() {
 
   return (
     <>
+      <Helmet>
+        <title>Nataliia Sokolova - Web Developer Portfolio</title>
+        <meta property="og:url" content="http://sokolova.ca" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Nataliia Sokolova's Portfolio" />
+
+        <meta
+          name="description"
+          content="Welcome to my web developer portfolio!"
+        />
+
+        <meta property="og:image" content={img} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </Helmet>
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-        <Portfolio />
+
         <Header window={undefined} />
         <main>
           <Home
