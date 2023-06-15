@@ -13,11 +13,68 @@ import Home from "./components/Home";
 import About from "./components/About";
 import ContactSection from "./components/ContactSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import { Helmet } from "react-helmet";
-import img from "./assets/sea.jpg";
+
+function createOpenGraphMetaTags(
+  img: string,
+  imageType: string,
+  imageWidth: string,
+  imageHeight: string,
+  url: string,
+  title: string
+) {
+  const metaTags = [
+    { property: "og:image", content: img },
+    { property: "og:image:type", content: imageType },
+    { property: "og:image:width", content: imageWidth },
+    { property: "og:image:height", content: imageHeight },
+    { property: "og:url", content: url },
+    { property: "og:title", content: title },
+  ];
+
+  metaTags.forEach(({ property, content }) => {
+    const metaTag = document.createElement("meta");
+    metaTag.setAttribute("property", property);
+    metaTag.setAttribute("content", content);
+    document.head.appendChild(metaTag);
+  });
+}
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const img = "http://sokolova.ca/image.jpg";
+  const url = "http://sokolova.ca";
+  const title = "Nataliia Sokolova's Portfolio";
+  const imageType = "image/jpeg";
+  const imageWidth = "1200";
+  const imageHeight = "630";
+
+  useEffect(() => {
+    const updateMetaTags = () => {
+      const metaTags = document.getElementsByTagName("meta");
+      for (let i = 0; i < metaTags.length; i++) {
+        const metaTag = metaTags[i];
+        if (metaTag.getAttribute("name") === "description") {
+          metaTag.setAttribute(
+            "content",
+            "Welcome to my web developer portfolio!"
+          );
+        }
+        if (metaTag.getAttribute("name") === "theme-color") {
+          metaTag.setAttribute("content", "#008f68");
+        }
+      }
+    };
+
+    updateMetaTags();
+    createOpenGraphMetaTags(
+      img,
+      imageType,
+      imageWidth,
+      imageHeight,
+      url,
+      title
+    );
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,24 +98,8 @@ function App() {
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
-        <Helmet>
-          <title>Nataliia Sokolova - Web Developer Portfolio</title>
-          <meta property="og:url" content="http://sokolova.ca" />
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content="Nataliia Sokolova's Portfolio" />
-          <meta
-            name="description"
-            content="Welcome to my web developer portfolio!"
-          />
-
-          <meta property="og:image" content={img} />
-          <meta property="og:image:type" content="image/jpeg" />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
-        </Helmet>
         <CssBaseline />
-
-        <Header window={undefined} />
+        <Header />
         <main>
           <Home
             title={"Nataliia Sokolova"}
