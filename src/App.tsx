@@ -13,7 +13,6 @@ import Home from "./components/Home";
 import About from "./components/About";
 import ContactSection from "./components/ContactSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import Portfolio from "./components/Portfolio";
 import { Helmet } from "react-helmet";
 import img from "./assets/sea.jpg";
 
