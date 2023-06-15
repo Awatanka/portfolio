@@ -8,15 +8,15 @@ class Portfolio extends React.Component {
       <>
         <Helmet>
           <title>Nataliia Sokolova - Web Developer Portfolio</title>
+          <meta property="og:url" content="http://sokolova.ca" />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content="Nataliia Sokolova's Portfolio" />
+
           <meta
             name="description"
             content="Welcome to my web developer portfolio!"
           />
-          <meta property="og:title" content="Nataliia Sokolova's Portfolio" />
-          <meta
-            property="og:description"
-            content="Check out Nataliia Sokolova's web developer portfolio."
-          />
+
           <meta property="og:image" content={img} />
           <meta property="og:image:type" content="image/jpeg" />
           <meta property="og:image:width" content="1200" />
