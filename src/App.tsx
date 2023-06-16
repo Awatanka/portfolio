@@ -38,15 +38,15 @@ function createOpenGraphMetaTags(
     document.head.appendChild(metaTag);
   });
 }
+const img = "http://sokolova.ca/image.jpg";
+const url = "http://sokolova.ca";
+const title = "Nataliia Sokolova's Portfolio";
+const imageType = "image/jpeg";
+const imageWidth = "1200";
+const imageHeight = "630";
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const img = "http://sokolova.ca/image.jpg";
-  const url = "http://sokolova.ca";
-  const title = "Nataliia Sokolova's Portfolio";
-  const imageType = "image/jpeg";
-  const imageWidth = "1200";
-  const imageHeight = "630";
 
   useEffect(() => {
     const updateMetaTags = () => {
@@ -60,7 +60,7 @@ function App() {
           );
         }
         if (metaTag.getAttribute("name") === "theme-color") {
-          metaTag.setAttribute("content", "#008f68");
+          metaTag.setAttribute("content", "#013B41");
         }
       }
     };
