@@ -57,7 +57,7 @@ const projects = [
     details:
       "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
-    web: "https://ea-share-play.netlify.app/games/fifa",
+    web: "https://ea-share-play.netlify.app/",
   },
   {
     title: "Rentsy",

@@ -62,6 +62,7 @@ function App() {
         if (metaTag.getAttribute("name") === "theme-color") {
           metaTag.setAttribute("content", "#013B41");
         }
+        (window as any).top.document.title = "Test";
       }
     };
 
