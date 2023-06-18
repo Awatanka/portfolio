@@ -62,7 +62,7 @@ function App() {
         if (metaTag.getAttribute("name") === "theme-color") {
           metaTag.setAttribute("content", "#013B41");
         }
-        (window as any).top.document.title = "Test";
+        // (window as any).top.document.title = "Test";
       }
     };
 
@@ -100,8 +100,9 @@ function App() {
     <>
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-        <Header />
-        <main>
+        <Header />{" "}
+        <main style={{ position: "static" }}>
+          {" "}
           <Home
             title={"Nataliia Sokolova"}
             subtitle={"<web developer/> you are looking for."}
