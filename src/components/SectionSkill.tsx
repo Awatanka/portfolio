@@ -60,6 +60,16 @@ const SectionSkill: FC = (): ReactElement => {
         iconSrc:
           "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
       },
+      {
+        name: "Mui",
+        iconSrc:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+      },
+      {
+        name: "Redux",
+        iconSrc:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+      },
     ],
     backend: [
       {
@@ -76,6 +86,16 @@ const SectionSkill: FC = (): ReactElement => {
         name: "Knex",
         iconSrc:
           "https://www.lanreakinola.dev/static/media/knex.03526424fd1de8026c75.webp",
+      },
+      {
+        name: "Express",
+        iconSrc:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      },
+      {
+        name: "Docker",
+        iconSrc:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
       },
     ],
     tools: [
@@ -99,6 +119,20 @@ const SectionSkill: FC = (): ReactElement => {
         iconSrc:
           "https://icongr.am/devicon/gitlab-original.svg?size=128&color=currentColor",
       },
+      // {
+      //   name: "Tableau",
+      //   iconSrc: "https://icons8.com/icon/9Kvi1p1F0tUo/tableau-software",
+      // },
+      // {
+      //   name: "Invision",
+      //   iconSrc:
+      //     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/invision/invision-original.svg",
+      // },
+      // {
+      //   name: "Auth0",
+      //   iconSrc:
+      //     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/auth0/auth0-original.svg",
+      // },
     ],
   };
 
