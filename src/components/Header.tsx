@@ -44,7 +44,7 @@ export default function DrawerAppBar({ window }: Props) {
     if (id === "resume") {
       const resumeLink = document.createElement("a");
       resumeLink.href =
-        "https://drive.google.com/file/d/1LEz-3hwZUNC4PLHOwV6w6phsQRA-o_Ow/view?usp=sharing";
+        "https://drive.google.com/file/d/14Ocl5hpprdI5Fcx3S8djvm0Wy_Ra4Jrh/view?usp=sharing";
       resumeLink.target = "_blank";
       resumeLink.style.display = "none";
       document.body.appendChild(resumeLink);
