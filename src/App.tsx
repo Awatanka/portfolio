@@ -102,7 +102,6 @@ function App() {
         <CssBaseline />
         <Header />{" "}
         <main style={{ position: "static" }}>
-          {" "}
           <Home
             title={"Nataliia Sokolova"}
             subtitle={"<web developer/> you are looking for."}
