@@ -45,27 +45,23 @@ const imageType = "image/jpeg";
 const imageWidth = "1200";
 const imageHeight = "630";
 
+function updateMetaTags() {
+  const metaTags = document.getElementsByTagName("meta");
+  for (let i = 0; i < metaTags.length; i++) {
+    const metaTag = metaTags[i];
+    if (metaTag.getAttribute("name") === "description") {
+      metaTag.setAttribute("content", "Welcome to my web developer portfolio!");
+    }
+    if (metaTag.getAttribute("name") === "theme-color") {
+      metaTag.setAttribute("content", "#013B41");
+    }
+  }
+}
+
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
-    const updateMetaTags = () => {
-      const metaTags = document.getElementsByTagName("meta");
-      for (let i = 0; i < metaTags.length; i++) {
-        const metaTag = metaTags[i];
-        if (metaTag.getAttribute("name") === "description") {
-          metaTag.setAttribute(
-            "content",
-            "Welcome to my web developer portfolio!"
-          );
-        }
-        if (metaTag.getAttribute("name") === "theme-color") {
-          metaTag.setAttribute("content", "#013B41");
-        }
-        // (window as any).top.document.title = "Test";
-      }
-    };
-
     updateMetaTags();
     createOpenGraphMetaTags(
       img,
