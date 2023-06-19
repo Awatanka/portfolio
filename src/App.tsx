@@ -32,13 +32,17 @@ function createOpenGraphMetaTags(
     { property: "og:title", content: title },
   ];
 
+  const head = document.head;
+  const firstChild = head.firstChild;
+
   metaTags.forEach(({ property, content }) => {
     const metaTag = document.createElement("meta");
     metaTag.setAttribute("property", property);
     metaTag.setAttribute("content", content);
-    document.head.appendChild(metaTag);
+    head.insertBefore(metaTag, firstChild);
   });
 }
+
 const img = imageLogo;
 const url = "http://sokolova.ca";
 const title = "Nataliia Sokolova's Portfolio";
