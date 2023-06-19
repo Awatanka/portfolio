@@ -15,37 +15,6 @@ import ContactSection from "./components/ContactSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import imageLogo from "./assets/mylogo.png";
 
-function createOpenGraphMetaTags(
-  img: string,
-  imageType: string,
-  imageWidth: string,
-  imageHeight: string,
-  url: string,
-  title: string
-) {
-  const metaTags = [
-    { property: "og:image", content: img },
-    { property: "og:image:type", content: imageType },
-    { property: "og:image:width", content: imageWidth },
-    { property: "og:image:height", content: imageHeight },
-    { property: "og:url", content: url },
-    { property: "og:title", content: title },
-  ];
-
-  metaTags.forEach(({ property, content }) => {
-    const metaTag = document.createElement("meta");
-    metaTag.setAttribute("property", property);
-    metaTag.setAttribute("content", content);
-    document.head.appendChild(metaTag);
-  });
-}
-const img = imageLogo;
-const url = "http://sokolova.ca";
-const title = "Nataliia Sokolova's Portfolio";
-const imageType = "image/jpeg";
-const imageWidth = "1200";
-const imageHeight = "630";
-
 function updateMetaTags() {
   const metaTags = document.getElementsByTagName("meta");
   for (let i = 0; i < metaTags.length; i++) {
@@ -58,6 +27,42 @@ function updateMetaTags() {
     }
   }
   console.log(metaTags);
+}
+
+function createOpenGraphMetaTags(
+  img: string,
+  imageType: string,
+  imageWidth: string,
+  imageHeight: string,
+  url: string,
+  title: string
+) {
+  const head = document.head;
+  const existingMetaTags = head.querySelectorAll('meta[property^="og:"]');
+
+  if (existingMetaTags.length > 0) {
+    existingMetaTags.forEach((metaTag) => {
+      head.removeChild(metaTag);
+    });
+  }
+
+  const metaTags = [
+    { property: "og:image", content: img },
+    { property: "og:image:type", content: imageType },
+    { property: "og:image:width", content: imageWidth },
+    { property: "og:image:height", content: imageHeight },
+    { property: "og:url", content: url },
+    { property: "og:title", content: title },
+  ];
+
+  const firstChild = head.firstChild;
+
+  metaTags.forEach(({ property, content }) => {
+    const metaTag = document.createElement("meta");
+    metaTag.setAttribute("property", property);
+    metaTag.setAttribute("content", content);
+    head.insertBefore(metaTag, firstChild);
+  });
 }
 
 function App() {
@@ -92,13 +97,20 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const img: string = imageLogo;
+  const url: string = "http://sokolova.ca";
+  const title: string = "Nataliia Sokolova's Portfolio";
+  const imageType: string = "image/jpeg";
+  const imageWidth: string = "1200";
+  const imageHeight: string = "630";
+
   const defaultTheme = createTheme();
 
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
-        <Header />{" "}
+        <Header />
         <main style={{ position: "static" }}>
           <Home
             title={"Nataliia Sokolova"}
