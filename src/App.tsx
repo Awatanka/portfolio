@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import ContactSection from "./components/ContactSection";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import imageLogo from "./assets/mylogo.png";
 
 function createOpenGraphMetaTags(
   img: string,
@@ -38,7 +39,7 @@ function createOpenGraphMetaTags(
     document.head.appendChild(metaTag);
   });
 }
-const img = "http://sokolova.ca/image.jpg";
+const img = imageLogo;
 const url = "http://sokolova.ca";
 const title = "Nataliia Sokolova's Portfolio";
 const imageType = "image/jpeg";
@@ -56,6 +57,7 @@ function updateMetaTags() {
       metaTag.setAttribute("content", "#013B41");
     }
   }
+  console.log(metaTags);
 }
 
 function App() {
