@@ -46,21 +46,27 @@ function createOpenGraphMetaTags(
   }
 
   const metaTags = [
+    { property: "og:title", content: title },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: url },
     { property: "og:image", content: img },
     { property: "og:image:type", content: imageType },
     { property: "og:image:width", content: imageWidth },
     { property: "og:image:height", content: imageHeight },
-    { property: "og:url", content: url },
-    { property: "og:title", content: title },
   ];
 
-  const firstChild = head.firstChild;
+  const titleTag = document.querySelector("title");
+  const firstChild = titleTag ? titleTag.nextElementSibling : null;
 
   metaTags.forEach(({ property, content }) => {
     const metaTag = document.createElement("meta");
     metaTag.setAttribute("property", property);
     metaTag.setAttribute("content", content);
-    head.insertBefore(metaTag, firstChild);
+    if (firstChild) {
+      head.insertBefore(metaTag, firstChild);
+    } else {
+      head.appendChild(metaTag);
+    }
   });
 }
 
