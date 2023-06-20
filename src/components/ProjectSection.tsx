@@ -43,7 +43,7 @@ const projects = [
     details:
       "Personal project, full-stack web application within a limited timeframe of 10 days",
     git: "https://github.com/Awatanka/rentsy-client",
-    web: "hhttps://drive.google.com/file/d/10Vhh1EmyNL7akdKi-zjoKID7TZMB7hhy/view?usp=sharing",
+    web: "https://drive.google.com/file/d/10Vhh1EmyNL7akdKi-zjoKID7TZMB7hhy/view?usp=sharing",
   },
   {
     title: "rhi.zone",
