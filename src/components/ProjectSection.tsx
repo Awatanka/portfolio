@@ -32,6 +32,20 @@ const projects = [
     web: "https://awatanka.github.io/sport_club/index.html",
   },
   {
+    title: "Rentsy",
+    description:
+      "Tech Stack: React, JavaScript, Sass, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API",
+    picBg: rentsy,
+    summary: [
+      "Rentsy is a website for rental house hunting that provides additional information to save you time and effort during your search. It offers details such as nearby dog parks and crime rates.",
+      "This full-stack application was built using public APIs and Google APIs to enhance the user experience and provide comprehensive data for making informed rental decisions.",
+    ],
+    details:
+      "Personal project, full-stack web application within a limited timeframe of 10 days",
+    git: "https://github.com/Awatanka/rentsy-client",
+    web: "hhttps://drive.google.com/file/d/10Vhh1EmyNL7akdKi-zjoKID7TZMB7hhy/view?usp=sharing",
+  },
+  {
     title: "rhi.zone",
     description:
       "Tech Stack: React, TypeScript, MUI, Node, Jest, Docker, MySQL, Express",
@@ -56,22 +70,8 @@ const projects = [
     ],
     details:
       "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
-    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+    git: "https://github.com/Awatanka/405-found",
     web: "https://ea-share-play.netlify.app/",
-  },
-  {
-    title: "Rentsy",
-    description:
-      "Tech Stack: React, JavaScript, Sass, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API",
-    picBg: rentsy,
-    summary: [
-      "Rentsy is a website for rental house hunting that provides additional information to save you time and effort during your search. It offers details such as nearby dog parks and crime rates.",
-      "This full-stack application was built using public APIs and Google APIs to enhance the user experience and provide comprehensive data for making informed rental decisions.",
-    ],
-    details:
-      "Personal project, full-stack web application within a limited timeframe of 10 days",
-    git: "https://github.com/Awatanka/rentsy-client",
-    web: "https://drive.google.com/drive/search?q=rentsy",
   },
   {
     title: "Vancity for U",
