@@ -57,7 +57,7 @@ const projects = [
     details:
       "Team of 8 developers, 3 sprints, 2 months, from product specification to 1 working prototype of the feature",
     git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
-    web: "https://rhi.zone/",
+    web: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
   },
   {
     title: "EA SharePlay",
@@ -71,7 +71,7 @@ const projects = [
     details:
       "Team of 3 developers and 3 UX designers, 24 hours, 1 working prototype of EA SharePlay feature",
     git: "https://github.com/Awatanka/405-found",
-    web: "https://ea-share-play.netlify.app/",
+    web: "https://drive.google.com/file/d/1nxqowGsdoiPV7StZ5KMct5AEV0JUzQil/view?usp=sharing",
   },
   {
     title: "Vancity for U",
