@@ -56,8 +56,8 @@ const projects = [
     ],
     details:
       "Team of 8 developers, 3 sprints, 2 months, from product specification to 1 working prototype of the feature",
-    git: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
-    web: "https://github.com/OpenTree-Education/rhizone-lms/tree/features/assessments",
+    git: "https://github.com/OpenTree-Education/rhizone-lms/pull/589",
+    web: "https://github.com/OpenTree-Education/rhizone-lms/pull/589",
   },
   {
     title: "EA SharePlay",
