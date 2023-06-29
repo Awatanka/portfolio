@@ -87,8 +87,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const scrollButtonThreshold = 200;
 
       if (scrollTop > scrollButtonThreshold) {

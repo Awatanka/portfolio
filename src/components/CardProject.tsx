@@ -40,7 +40,7 @@ const Container = styled("div")(({ theme }) => ({
   },
   "& p": {
     color: "#333",
-    opacity: "0.7",
+    opacity: "0.8",
     fontSize: "14px",
     letterSpacing: "1px",
     margin: "5px 25px",

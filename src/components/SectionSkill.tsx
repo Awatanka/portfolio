@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { FC, ReactElement } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { InView, useInView } from "react-intersection-observer";
 
 interface Skill {
   name: string;
@@ -142,6 +142,9 @@ const SectionSkill: FC = (): ReactElement => {
     "Interpersonal Awareness",
     "Following Directions",
     "Driving Alignment",
+    "Conveying role value",
+    "Customer-oriented",
+    "Handling change",
   ];
 
   const [refFrontend, inViewFrontend] = useInView({
@@ -263,51 +266,63 @@ const SectionSkill: FC = (): ReactElement => {
         </Typography>
         {renderSkills(skillsData.tools, refTools, inViewTools)}
       </div>
-      <Box py={4} borderRadius={10}>
-        <Grid container justifyContent="center" spacing={2}>
-          <Grid item xs={12}>
-            <Typography
-              variant="h5"
-              align="center"
-              gutterBottom
-              style={{
-                color: "#333",
-                opacity: "0.7",
-                fontSize: "24px",
-                letterSpacing: "1px",
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-              }}
-            >
-              Soft Skills
-            </Typography>
-          </Grid>
-          {softSkills.map((skill, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Box
-                borderRadius={10}
-                bgcolor="white"
-                p={2}
-                border={1}
-                borderColor={"ButtonShadow"}
-              >
-                <Typography
-                  variant="body1"
-                  align="center"
-                  style={{
-                    color: "#333",
-                    opacity: "0.7",
-                    fontSize: "16px",
-                    letterSpacing: "0.5px",
-                    fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                  }}
-                >
-                  {skill}
-                </Typography>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+
+      <InView>
+        {({ ref, inView }) => (
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1.5 }}
+          >
+            <Box py={4} borderRadius={10}>
+              <Grid container justifyContent="center" spacing={4}>
+                <Grid item xs={12}>
+                  <Typography
+                    variant="h5"
+                    align="center"
+                    gutterBottom
+                    style={{
+                      color: "#333",
+                      opacity: "0.7",
+                      fontSize: "24px",
+                      letterSpacing: "1px",
+                      fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                    }}
+                  >
+                    Soft Skills
+                  </Typography>
+                </Grid>
+                {softSkills.map((skill, index) => (
+                  <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Box
+                      borderRadius={10}
+                      bgcolor="white"
+                      p={2}
+                      border={1}
+                      borderColor={"ButtonShadow"}
+                    >
+                      <Typography
+                        variant="body1"
+                        align="center"
+                        style={{
+                          color: "#333",
+                          opacity: "0.7",
+                          fontSize: "16px",
+                          letterSpacing: "0.5px",
+                          fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                        }}
+                      >
+                        {skill}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </motion.div>
+        )}
+      </InView>
     </>
   );
 };
