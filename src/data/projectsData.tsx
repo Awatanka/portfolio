@@ -144,7 +144,7 @@ export const miniProjects = [
     image: Blog,
     imageLabel: "BlackJack",
     title:
-      "Post 'A Practical Guide to Developing an Accessible Toggle Button Component in React'",
-    href: "https://blackjack-js-awatan.netlify.app/",
+      "A Practical Guide to Developing an Accessible Toggle Button Component in React on medium.com",
+    href: "https://medium.com/@natalia.sokolova.ca/a-practical-guide-to-developing-an-accessible-toggle-button-component-in-react-3d3638c2f135",
   },
 ];
