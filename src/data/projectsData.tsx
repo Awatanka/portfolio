@@ -142,7 +142,7 @@ export const miniProjects = [
     description:
       "Switches are commonly used UI elements for toggling between two states, such as turning a feature on or off. However, it is important to ensure that these elements are accessible to all users, including those with disabilities. The use of TypeScript in the project also helped to enforce type checking and improve the overall robustness of the codebase. This blog post will provide a practical guide to developing an accessible switch component in React with TypeScript.",
     image: Blog,
-    imageLabel: "BlackJack",
+    imageLabel: "Blog",
     title:
       "A Practical Guide to Developing an Accessible Toggle Button Component in React on medium.com",
     href: "https://medium.com/@natalia.sokolova.ca/a-practical-guide-to-developing-an-accessible-toggle-button-component-in-react-3d3638c2f135",
