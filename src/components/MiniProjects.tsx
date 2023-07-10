@@ -13,8 +13,8 @@ interface FeaturedPostProps {
     image: string;
     imageLabel: string;
     title: string;
-    href: string;
-    git: string;
+    href?: string;
+    git?: string;
   };
 }
 
@@ -52,8 +52,8 @@ export default function MiniProjects(props: FeaturedPostProps) {
               <CardMedia
                 component="img"
                 sx={{
-                  width: 180,
-                  height: 180,
+                  width: 190,
+                  // height: 190,
                   display: { xs: "none", sm: "block" },
                   margin: "12px",
                   objectFit: "cover",
@@ -88,32 +88,37 @@ export default function MiniProjects(props: FeaturedPostProps) {
                   flexDirection: "row",
                 }}
               >
-                <a
-                  className="icon"
-                  href={projects.git}
-                  style={{ margin: "0 20px" }}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <GitHub
-                    style={{ fill: "#2F4F4F" }}
-                    className="icon-image"
-                    fontSize="large"
-                  />
-                </a>
-                <a
-                  className="icon"
-                  href={projects.href}
-                  style={{ margin: "0 20px" }}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <OndemandVideo
-                    style={iconStyles}
-                    className="icon-image"
-                    fontSize="large"
-                  />
-                </a>
+                {projects.git && (
+                  <a
+                    className="icon"
+                    href={projects.git}
+                    style={{ margin: "0 20px" }}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <GitHub
+                      style={{ fill: "#2F4F4F" }}
+                      className="icon-image"
+                      fontSize="large"
+                    />
+                  </a>
+                )}
+
+                {projects.href && (
+                  <a
+                    className="icon"
+                    href={projects.href}
+                    style={{ margin: "0 20px" }}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <OndemandVideo
+                      style={iconStyles}
+                      className="icon-image"
+                      fontSize="large"
+                    />
+                  </a>
+                )}
               </Box>
             </Box>
 

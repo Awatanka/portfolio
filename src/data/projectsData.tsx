@@ -141,11 +141,10 @@ export const miniProjects = [
     stack: "React, TypeScript",
     description:
       "Switches are commonly used UI elements for toggling between two states, such as turning a feature on or off. However, it is important to ensure that these elements are accessible to all users, including those with disabilities. The use of TypeScript in the project also helped to enforce type checking and improve the overall robustness of the codebase. This blog post will provide a practical guide to developing an accessible switch component in React with TypeScript.",
-    image: Jack,
+    image: Blog,
     imageLabel: "BlackJack",
     title:
-      "Blog Post on medium.com - 'A Practical Guide to Developing an Accessible Toggle Button Component in React'",
+      "Post 'A Practical Guide to Developing an Accessible Toggle Button Component in React'",
     href: "https://blackjack-js-awatan.netlify.app/",
-    git: "https://github.com/Awatanka/blackjack-JS",
   },
 ];
