@@ -8,7 +8,7 @@ import { GitHub, OndemandVideo } from "@mui/icons-material";
 
 interface FeaturedPostProps {
   projects: {
-    date: string;
+    stack: string;
     description: string;
     image: string;
     imageLabel: string;
@@ -127,7 +127,7 @@ export default function MiniProjects(props: FeaturedPostProps) {
                 opacity: 0.8,
               }}
             >
-              {projects.date}
+              {projects.stack}
             </Typography>
             <Typography
               paragraph
