@@ -9,7 +9,7 @@ import Chrome from "../assets/chrome.png";
 import Candy from "../assets/candy.png";
 import Jack from "../assets/jack.png";
 import Blog from "../assets/blog.png";
-import Listify from "../assets/Listyfi.png";
+import Listify from "../assets/Listyfy.png";
 
 export const projects = [
   {
