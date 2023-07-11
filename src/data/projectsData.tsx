@@ -9,6 +9,7 @@ import Chrome from "../assets/chrome.png";
 import Candy from "../assets/candy.png";
 import Jack from "../assets/jack.png";
 import Blog from "../assets/blog.png";
+import Listify from "../assets/Listyfi.png";
 
 export const projects = [
   {
@@ -138,7 +139,17 @@ export const miniProjects = [
     git: "https://github.com/Awatanka/blackjack-JS",
   },
   {
-    stack: "React, TypeScript",
+    stack: "HTML, CSS, JavaScript, Firebase",
+    description:
+      "Using Firebase, I built a simple shopping list application. Working with Firebase was a breeze, thanks to its comprehensive JavaScript SDK and intuitive documentation.",
+    image: Listify,
+    imageLabel: "App",
+    title: "Listify",
+    href: "https://listify-me.netlify.app/",
+    git: "https://github.com/Awatanka/shopping-list",
+  },
+  {
+    stack: "React, Redux, TypeScript",
     description:
       "Switches are commonly used UI elements for toggling between two states, such as turning a feature on or off. However, it is important to ensure that these elements are accessible to all users, including those with disabilities. The use of TypeScript in the project also helped to enforce type checking and improve the overall robustness of the codebase. This blog post will provide a practical guide to developing an accessible switch component in React with TypeScript.",
     image: Blog,
