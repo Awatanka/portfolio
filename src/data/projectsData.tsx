@@ -10,6 +10,7 @@ import Candy from "../assets/candy.png";
 import Jack from "../assets/jack.png";
 import Blog from "../assets/blog.png";
 import Listify from "../assets/Listyfy.png";
+import Airbnb from "../assets/Airbnb.png";
 
 export const projects = [
   {
@@ -147,6 +148,16 @@ export const miniProjects = [
     title: "Listify",
     href: "https://listify-me.netlify.app/",
     git: "https://github.com/Awatanka/shopping-list",
+  },
+  {
+    stack: "HTML, CSS, React, JavaScript",
+    description:
+      "I recently created an Airbnb experience landing page to practice working with props. The central component, called Card, is designed to be reusable and showcases essential details of each listing, including the cover image, rating, review count, location, title, and price per person. To add some dynamic elements, I implemented a badge feature. When a listing has no available spots, the badge displays SOLD OUT, while for listings with the location set as Online, it shows ONLINE.",
+    image: Airbnb,
+    imageLabel: "Landing Page",
+    title: "Airbnb clone landing page",
+    href: "https://airbnb-vite-project.netlify.app/",
+    git: "https://github.com/Awatanka/vite-project",
   },
   {
     stack: "React, Redux, TypeScript",

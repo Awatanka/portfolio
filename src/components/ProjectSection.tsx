@@ -134,23 +134,44 @@ const ProjectSection = () => {
               </motion.div>
             )}
           </InView>
+          <Container
+            sx={{
+              overflowY: "auto",
+              height: 600,
+              scrollbarWidth: "thin",
 
-          {miniProjects.map((project, index) => (
-            <div key={index} style={{ margin: "0 auto" }}>
-              <InView>
-                {({ ref, inView }) => (
-                  <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 1.5 }}
-                  >
-                    <MiniProjects projects={project} />
-                  </motion.div>
-                )}
-              </InView>
-            </div>
-          ))}
+              "&::-webkit-scrollbar": {
+                width: "0.4em",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: "#f1f1f1",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#248282",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: "#555",
+              },
+            }}
+          >
+            {" "}
+            {miniProjects.map((project, index) => (
+              <div key={index} style={{ margin: "0 auto" }}>
+                <InView>
+                  {({ ref, inView }) => (
+                    <motion.div
+                      ref={ref}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={inView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 1.5 }}
+                    >
+                      <MiniProjects projects={project} />
+                    </motion.div>
+                  )}
+                </InView>
+              </div>
+            ))}
+          </Container>
         </Container>
       </Box>
     </>

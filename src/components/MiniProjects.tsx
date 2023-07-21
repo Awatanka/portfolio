@@ -53,7 +53,6 @@ export default function MiniProjects(props: FeaturedPostProps) {
                 component="img"
                 sx={{
                   width: 190,
-                  // height: 190,
                   display: { xs: "none", sm: "block" },
                   margin: "12px",
                   objectFit: "cover",
