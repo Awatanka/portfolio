@@ -39,7 +39,7 @@ export const projects = [
     details:
       "Personal project, full-stack web application within a limited timeframe of 10 days",
     git: "https://github.com/Awatanka/rentsy-client",
-    web: "https://drive.google.com/file/d/10Vhh1EmyNL7akdKi-zjoKID7TZMB7hhy/view?usp=sharing",
+    web: "https://rentsy.netlify.app/",
   },
   {
     title: "rhi.zone",

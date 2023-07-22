@@ -139,15 +139,17 @@ const ProjectSection = () => {
               overflowY: "auto",
               height: 600,
               scrollbarWidth: "thin",
-
               "&::-webkit-scrollbar": {
                 width: "0.4em",
               },
               "&::-webkit-scrollbar-track": {
-                background: "#f1f1f1",
+                // background: "#f1f1f1",
+                background: "white",
               },
               "&::-webkit-scrollbar-thumb": {
-                backgroundColor: "#248282",
+                // backgroundColor: "rgb(36, 130, 130, 0.5)",
+                // backgroundColor: "#ffd500",
+                backgroundColor: "white",
               },
               "&::-webkit-scrollbar-thumb:hover": {
                 background: "#555",
