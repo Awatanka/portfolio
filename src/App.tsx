@@ -111,7 +111,7 @@ function App() {
         <main style={{ position: "static" }}>
           <Home
             title={"Nataliia Sokolova"}
-            subtitle={"<web developer/> you are looking for."}
+            subtitle={" <web developer/> you are looking for."}
           />
           <Container maxWidth="lg">
             <About />

@@ -7,10 +7,10 @@ import CreativeButton from "./CreativeButton";
 import seaBackground from "../assets/sea.jpg";
 
 const rotatingWords = [
-  "An innovative",
-  "A collaborative",
-  "A reliable",
-  "A detail-oriented",
+  "An innovative ",
+  "A collaborative ",
+  "A reliable ",
+  "A detail-oriented ",
 ];
 
 const HeroContainer = styled("div")({

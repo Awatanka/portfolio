@@ -139,6 +139,7 @@ export default function DrawerAppBar({ window }: Props) {
           >
             <MenuIcon fontSize="large" />
           </IconButton>
+
           <Typography
             variant="h6"
             component="div"
@@ -146,7 +147,7 @@ export default function DrawerAppBar({ window }: Props) {
               flexGrow: 1,
               display: { xs: "none", sm: "block" },
               fontFamily: "fantasy",
-              fontSize: 30,
+              fontSize: 26,
               alignItems: "center",
               marginTop: "10px",
             }}
