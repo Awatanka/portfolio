@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Typography, useMediaQuery } from "@mui/material";
 import { Theme, styled } from "@mui/material/styles";
 import { motion, Variants } from "framer-motion";
@@ -53,6 +53,8 @@ const HeroSubtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const LazyBackgroundImage = lazy(() => import("./BackgroundImage"));
+
 type HeroProps = {
   title: string;
   subtitle: string;
@@ -104,6 +106,9 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
                 {title}
               </HeroTitle>
             </motion.div>
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyBackgroundImage />
+            </Suspense>
 
             <motion.div
               initial={{ opacity: 0 }}
